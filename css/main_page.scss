@@ -13,7 +13,6 @@
         @content;
     }
 }
-
 .clear:after {
     display: block;
     content: "";
@@ -26,45 +25,118 @@
     position: relative;
 }
 .contain-block {
+    z-index: 3;
     height: 480px;
     box-sizing: border-box;
     text-align: center;
     @extend .clear;
     @include sm {
-        height: 200px;
+        height: 300px;
     }
     @include xs {
         height: 200px;
     }
 }
-.master_vision_img {
-    width: 100%;
-    height: auto;
-}
-.web_characteristic {
-    padding-top: 50px;
+.master_vision {
     position: relative;
-    p {
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        font-size: 25px;
-        color: black;
+    background-image: url("../images/master-image-background.png");
+    button {
+        height: 40px;
+        width: 100px;
         position: absolute;
-        left: 0;
-        top: 100%;
+        top: 70%;
+        left: 50%;
+        margin-left: -50px;
+        color: black;
+    }
+}
+.master_vision_img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+/*web_characteristic*/
+.web_characteristic {
+    height: inherit;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    p {
+        text-align: center;
+        font-size: 2vw;
+        color: black;
+    }
+    @include xs {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+    @include sm {
+    padding-top: 20px;
+    padding-bottom: 20px;
     }
 }
 .web_characteristic_pic {
+    max-width: 100%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+}
+/*web_characteristic*/
+/*about_us*/
+.about_us {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    img {
+        max-width: 100%;
+        max-height: 80%;
+        width: auto;
+        height: auto;
+    }
+    p {
+        text-align: center;
+        font-size: 2vw;
+        color: black;
+    }
+    @include xs {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    @include sm {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+/*about_us*/
+/*Parallax Scrolling*/
+.fixed {
+    overflow: hidden;
+    height: 480px;
+    position: relative;
+    z-index: 0;
+    @include sm {
+        height: 300px;
+    }
+    @include xs {
+        height: 200px;
+    }
+}
+.fixed:before {
+    content: '';
+    position: fixed;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    will-change: transform;
+    background-color: white;
 }
-.bg_salmon {
-    background-color: rgb(244, 99, 45);
+.parallax1:before {
+    background: url('../images/Parallax_Scrolling1_1.png');
+    background-size: cover;
 }
-.bg_green {
-    background-color: rgb(8, 209, 101);
+.parallax2:before {
+    background: url('../images/Parallax_Scrolling1_2.png');
+    background-size: cover;
 }
-.bg_cyan {
-    background-color: rgb(35, 198, 219);
-}
+/*Parallax Scrolling*/

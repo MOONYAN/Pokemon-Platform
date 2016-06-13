@@ -1,4 +1,4 @@
-.clear:after, header:after, .contain-block:after, footer:after {
+.clear:after, header:after, footer:after {
   display: block;
   content: "";
   clear: both; }
@@ -11,15 +11,19 @@ header {
   background-color: #ffd500; }
   header a {
     color: black; }
+  header li {
+    z-index: 3; }
+  header .glyphicon {
+    z-index: 3; }
+  @media screen and (min-width: 1280px) {
+    header .hamburger-menu {
+      display: none; } }
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     header .nav {
       display: none; } }
   @media screen and (max-width: 768px) {
     header .nav {
       display: none; } }
-
-.contain-block img {
-  width: 100%; }
 
 footer {
   background-color: #ffd500;
@@ -30,5 +34,14 @@ footer {
 
 #footer-right {
   float: right; }
+
+.bg_salmon {
+  background-color: #ee7d51; }
+
+.bg_green {
+  background-color: #0ad569; }
+
+.bg_cyan {
+  background-color: #38c7da; }
 
 /*# sourceMappingURL=general.css.map */

@@ -13,8 +13,7 @@
         @content;
     }
 }
-
-.clear:after{
+.clear:after {
     display: block;
     content: "";
     clear: both;
@@ -28,23 +27,28 @@ header {
     a {
         color: black;
     }
-    @include sm{
-        .nav{
+    li {
+        z-index: 3;
+    }
+    .glyphicon{
+        z-index: 3;
+    }
+    @include lg {
+        .hamburger-menu {
             display: none;
         }
     }
-    @include xs{
-        .nav{
+    @include sm {
+        .nav {
+            display: none;
+        }
+    }
+    @include xs {
+        .nav {
             display: none;
         }
     }
     @extend .clear;
-}
-.contain-block{
-   img{
-       width: 100%;
-   }
-   @extend .clear;
 }
 footer {
     background-color: rgb(255, 213, 0);
@@ -56,4 +60,13 @@ footer {
 }
 #footer-right {
     float: right;
+}
+.bg_salmon {
+    background-color: rgb(238, 125, 81);
+}
+.bg_green {
+    background-color: rgb(10, 213, 105);
+}
+.bg_cyan {
+    background-color: rgb(56, 199, 218);
 }
