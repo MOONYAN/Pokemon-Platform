@@ -2,13 +2,15 @@
 var database = firebase.database();
 var user;
 
-$(Start);
-function Start() {
+$(CheckLoginState);
+$('#_loginButton').click(Login);
+/*function Start() {
+    user = JSON.parse(sessionStorage["user"]);
     if (!user) {
         $('#_petContent').addClass('hide');
         console.log('add');
     }
-}
+}*/
 
 $('#_postButton').click(function () {
     var newPet =
@@ -22,6 +24,7 @@ $('#_postButton').click(function () {
             ImageURL: $('#_imageURLText').val(),
             YoutubeURL: $('#_youtubeURLText').val().replace("https://www.youtube.com/watch?v=", ""),
             CellPhone: $('#_cellPhoneURLText').val(),
+            uid:user.uid
         };
     var petId = database.ref('pets').push(newPet).key;
     database.ref('users/' + user.uid + '/pets/' + petId).set(true);
@@ -30,10 +33,29 @@ $('#_postButton').click(function () {
     location.href = 'IntroducePet.html?petId=' + petId;
 });
 
-$('#_loginButton').click(function () {
+function CheckLoginState() {
+    //var loginState = localStorage("loginState");
+    $.when(sessionStorage["user"]).done(function (x) {
+        if (x) {
+            user = JSON.parse(x);
+            LoginSuccess();
+        }
+        else
+        {
+            $('#_petContent').addClass('hide');
+            console.log('add');
+        }
+    });
+}
+
+function Login() {
+    console.log('enter auto login');
     firebase.auth().signInWithPopup(provider).then(function (result) {
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.        
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        console.log('success');
         var token = result.credential.accessToken;
+        //user = result.user;
+        //localStorage["user"] = user;
         // The signed-in user info.
         //user = result.user;
         user =
@@ -44,6 +66,7 @@ $('#_loginButton').click(function () {
                 uid: result.user.uid,
                 providerId: result.user.providerId
             };
+        sessionStorage["user"] = JSON.stringify(user);
         setTimeout(LoginSuccess, 100);
         var updates = {};
         updates['users/' + user.uid + '/displayName'] = user.displayName;
@@ -60,10 +83,12 @@ $('#_loginButton').click(function () {
         var credential = error.credential;
         // ...
     });
-});
+}
 
 function LoginSuccess() {
     //localStorage.setItem('user', user);
+    //localStorage.setItem("loginState", "login");
+    //sessionStorage["loginState"] = "login";
     $('#_displayNameLabel').text(user.displayName);
     $('#_emailLabel').text(user.email);
     //$('#_photoURLLabel').text(user.photoURL);
@@ -71,7 +96,5 @@ function LoginSuccess() {
     $('#_uidLabel').text(user.uid);
     $('#_loginButton').addClass('hide');
     $('#_petContent').removeClass('hide');
-    console.log('remove');
-    //$('#_hidden').val(user.providerId);        
-    //console.log(user);
+    //$('#_hidden').val(user.providerId);
 }

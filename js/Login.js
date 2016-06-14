@@ -1,10 +1,31 @@
 ﻿var provider = new firebase.auth.FacebookAuthProvider();
 var user;
 //var testObject;
-$('#_loginButton').click(function () {
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+$(CheckLoginState);
+$('#_loginButton').click(Login);
+
+//$.when(provider).done(CheckLoginState);
+
+function CheckLoginState() {
+    //var loginState = localStorage("loginState");
+    $.when(sessionStorage["user"]).done(function (x) {
+        if(x)
+        {
+            user = JSON.parse(x);
+            LoginSuccess();
+        }
+    });
+}
+
+function Login()
+{
+    console.log('enter auto login');
+    firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        console.log('success');
         var token = result.credential.accessToken;
+        //user = result.user;
+        //localStorage["user"] = user;
         // The signed-in user info.
         //user = result.user;
         user =
@@ -15,13 +36,14 @@ $('#_loginButton').click(function () {
                 uid: result.user.uid,
                 providerId:result.user.providerId
             };
-        setTimeout(LoginSuccess,100);
+        sessionStorage["user"] = JSON.stringify(user);
+        setTimeout(LoginSuccess, 100);
         var updates = {};
         updates['users/' + user.uid + '/displayName'] = user.displayName;
         updates['users/' + user.uid + '/email'] = user.email;
         //database.ref('users/' + user.uid).update({ displayName: user.displayName, email: user.email });
         firebase.database.ref().update(updates);
-    }).catch(function(error) {
+    }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -31,16 +53,19 @@ $('#_loginButton').click(function () {
         var credential = error.credential;
         // ...
     });
-});
+}
+
+
 
 function LoginSuccess() {
     //localStorage.setItem('user', user);
+    //localStorage.setItem("loginState", "login");
+    //sessionStorage["loginState"] = "login";
     $('#_displayNameLabel').text(user.displayName);
     $('#_emailLabel').text(user.email);
     //$('#_photoURLLabel').text(user.photoURL);
     $('#_photoURLImage').attr("src", user.photoURL);
     $('#_uidLabel').text(user.uid);
     $('#_loginButton').addClass('hide');
-    //$('#_hidden').val(user.providerId);        
-
+    //$('#_hidden').val(user.providerId);
 }
