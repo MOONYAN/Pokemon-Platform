@@ -68,11 +68,11 @@ function Login() {
             };
         sessionStorage["user"] = JSON.stringify(user);
         setTimeout(LoginSuccess, 100);
-        var updates = {};
+        /*var updates = {};
         updates['users/' + user.uid + '/displayName'] = user.displayName;
         updates['users/' + user.uid + '/email'] = user.email;
-        //database.ref('users/' + user.uid).update({ displayName: user.displayName, email: user.email });
-        firebase.database.ref().update(updates);
+        database.ref().update(updates);*/
+        database.ref('users/' + user.uid).update(user);
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;

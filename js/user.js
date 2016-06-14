@@ -1,11 +1,20 @@
 ﻿var provider = new firebase.auth.FacebookAuthProvider();
 var database = firebase.database();
-var $petsContainer = $('#_petsContainer');
+var $usersContainer = $('#_usersContainer');
 var user;
 //var testObject;
 $(CheckLoginState);
 $('#_loginButton').click(Login);
+/*$('#_adminCheckbox').change(function () {
+    if ($(this).prop("checked")) {
+        alert('有勾選');
 
+    } else {
+        alert('無勾選');
+    }
+});*/
+
+//$("#_adminCheckbox").prop("checked", true);
 //$.when(provider).done(CheckLoginState);
 
 function CheckLoginState() {
@@ -65,33 +74,57 @@ function LoginSuccess() {
     $('#_photoURLImage').attr("src", user.photoURL);
     $('#_uidLabel').text(user.uid);
     $('#_loginButton').addClass('hide');
-    LoadOnesPets();
-    //$('#_petContent').removeClass('hide');
-    //$('#_hidden').val(user.providerId);
+    database.ref('admins/' + user.uid).on("value", function (adminSnapshot) {
+        if(adminSnapshot.exists())
+        {
+            LoadUsers();
+        }
+    });
 }
 
-function LoadOnesPets() {
-    var reference = database.ref('pets').orderByChild('Uid').equalTo(user.uid);
+function LoadUsers() {
+    var reference = database.ref('users');
     reference.once("value").then(function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             var data = childSnapshot.val();
-            var $petData = $("<div></div>");
-            var $imageURL = $(String.format('<img class="petImage" id="_imageURLImage" alt="_imageURLImage" src="{0}" /><br />', data.ImageURL));
-            var $petId = $(String.format('<label>PetId:{0}</label><br />', childSnapshot.key));
-            var $petName = $(String.format('<label>PetName:{0}</label><br />', data.PetName));
-            var $birthday = $(String.format('<label>Birthday:{0}</label><br />', data.Birthday));
-            var $location = $(String.format('<label>Location:{0}</label><br />', data.Location));
-            var $category = $(String.format('<label>Category:{0}</label><br />', data.Category));
-            $petData.append($imageURL);
-            $petData.append($petId);
-            $petData.append($petName);
-            $petData.append($birthday);
-            $petData.append($location);
-            $petData.append($category);
-            $petsContainer.append($petData);
-            $petData.click(function () {
-                location.href = 'IntroducePet.html?petId=' + childSnapshot.key;
+            var $userData = $("<div></div>");
+            var $photoURL = $(String.format('<img alt="photoURL" src="{0}" /><br />', data.photoURL));
+            var $uid = $(String.format('<label>PetId:{0}</label><br />', data.uid));
+            var $displayName = $(String.format('<label>PetName:{0}</label><br />', data.displayName));
+            var $email = $(String.format('<label>Birthday:{0}</label><br />', data.email));
+            var $adminCheckbox = $('<input type="checkbox" /><br />');
+
+            database.ref('admins/' + data.uid).on("value", function (adminSnapshot) {
+                $adminCheckbox.prop("checked", adminSnapshot.exists());
+                console.log("admin" + data.displayName + adminSnapshot.exists());
             });
+
+            $adminCheckbox.change(function () {
+                if ($(this).prop("checked")) {
+                    console.log("check");
+                    database.ref('admins/' + data.uid).set(true);
+                } else {
+                    console.log("none check");
+                    database.ref('admins/' + data.uid).remove();
+                }
+            });
+
+            $userData.append($photoURL);
+            $userData.append($uid);
+            $userData.append($displayName);
+            $userData.append($email);
+            $userData.append($adminCheckbox);
+            $usersContainer.append($userData);
+
+            /*database.ref('admins/' + data.uid).on('value', function (adminSnapshot) {
+                $adminCheckbox.prop("checked", adminSnapshot.exists());
+            });*/
+
+
+
+            /*$petData.click(function () {
+                location.href = 'IntroducePet.html?petId=' + childSnapshot.key;
+            });*/
             //console.log(childSnapshot.key);
             //console.log(childSnapshot.val());
             //console.log(childSnapshot.ref);
