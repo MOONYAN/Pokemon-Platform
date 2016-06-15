@@ -17,17 +17,4 @@
     .contain-block {
       height: 200px; } }
 
-.about_us {
-  padding-top: 100px;
-  position: relative; }
-  .about_us p {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-size: 25px;
-    color: black;
-    position: absolute;
-    left: 0;
-    top: 100%; }
-
 /*# sourceMappingURL=user.css.map */

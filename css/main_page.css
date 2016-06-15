@@ -16,10 +16,10 @@
   text-align: center; }
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     .contain-block {
-      height: 300px; } }
+      height: 290px; } }
   @media screen and (max-width: 768px) {
     .contain-block {
-      height: 200px; } }
+      height: 140px; } }
 
 .master_vision {
   position: relative;
@@ -32,6 +32,9 @@
     left: 50%;
     margin-left: -50px;
     color: black; }
+  @media screen and (max-width: 768px) {
+    .master_vision button {
+      height: 30px; } }
 
 .master_vision_img {
   max-width: 100%;
@@ -66,13 +69,9 @@
 /*web_characteristic*/
 /*about_us*/
 .about_us {
+  height: 90%;
   padding-top: 80px;
   padding-bottom: 80px; }
-  .about_us img {
-    max-width: 100%;
-    max-height: 80%;
-    width: auto;
-    height: auto; }
   .about_us p {
     text-align: center;
     font-size: 2vw;
@@ -83,8 +82,12 @@
       padding-bottom: 30px; } }
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     .about_us {
-      padding-top: 40px;
-      padding-bottom: 40px; } }
+      padding-top: 10px;
+      padding-bottom: 10px; } }
+
+.about_us_pic {
+  width: auto;
+  height: inherit; }
 
 /*about_us*/
 /*Parallax Scrolling*/
@@ -95,10 +98,10 @@
   z-index: 0; }
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     .fixed {
-      height: 300px; } }
+      height: 290px; } }
   @media screen and (max-width: 768px) {
     .fixed {
-      height: 200px; } }
+      height: 140px; } }
 
 .fixed:before {
   content: '';

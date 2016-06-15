@@ -10,27 +10,48 @@
     </head>
     <body>
         <header class="container">
-            <a href="index.html"><img class="logo col-xs-2 col-xs-offset-5 col-sm-2 col-sm-offset-5 col-lg-2 col-lg-offset-0" src="images/logo_petfinder.png" alt=""/></a>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="about_us.html">關於我們</a>
-                </li>
-                <li>
-                    <a href="#">領養平台</a>
-                </li>
-                <li>
-                    <a href="#">登入</a>
-                </li>
-                <li>
-                    <a href="user.html">使用者</a>
-                </li>
-            </ul>
-            <div class="hamburger-menu col-xs-offset-11 col-sm-offset-11">
-                <button type="button" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                </button>
+            <div class="row">
+                <a class="hamburger-menu pull-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h4><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></h4>
+                </a>
+                <div class="login_status"><img src="images/cat-pets-cute-nearby-allatportre.jpg" alt=""/></div>
+                <a href="index.html"><img class="logo col-lg-2 col-lg-offset-0" src="images/logo_petfinder.png" alt=""/></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about_us.html">關於我們</a>
+                    </li>
+                    <li>
+                        <a href="#">領養平台</a>
+                    </li>
+                    <li>
+                        <a href="#">登入</a>
+                    </li>
+                    <li>
+                        <a href="user.html">使用者</a>
+                    </li>
+                </ul>
             </div>
         </header>
+        <div class="container">
+            <div class="row">
+                <div id="collapseOne" class="collapse">
+                    <ul class="nav">
+                        <li>
+                            <a href="about_us.html">關於我們</a>
+                        </li>
+                        <li>
+                            <a href="#">領養平台</a>
+                        </li>
+                        <li>
+                            <a href="#">登入</a>
+                        </li>
+                        <li>
+                            <a href="user.html">使用者</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row contain-block master_vision">
                 <img class="master_vision_img" src="images/master-image.png" alt=""/>
@@ -71,7 +92,7 @@
                 <div class="fixed parallax2"></div>
             </div>
             <!--contain-block-->
-            <div class="row contain-block bg_salmon">
+            <div class="row contain-block bg_cyan">
                 <div class="about_us col-xs-3 col-sm-3 col-lg-3">
                     <img class="about_us_pic" src="images/cat-pets-cute-nearby-allatportre.jpg" alt=""/>
                     <p>
