@@ -24,7 +24,8 @@ $('#_postButton').click(function () {
             ImageURL: $('#_imageURLText').val(),
             YoutubeURL: $('#_youtubeURLText').val().replace("https://www.youtube.com/watch?v=", ""),
             CellPhone: $('#_cellPhoneURLText').val(),
-            uid:user.uid
+            Uid: user.uid,
+            State: active
         };
     var petId = database.ref('pets').push(newPet).key;
     database.ref('users/' + user.uid + '/pets/' + petId).set(true);

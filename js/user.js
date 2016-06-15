@@ -82,16 +82,33 @@ function LoadOnesPets() {
             var $birthday = $(String.format('<label>Birthday:{0}</label><br />', data.Birthday));
             var $location = $(String.format('<label>Location:{0}</label><br />', data.Location));
             var $category = $(String.format('<label>Category:{0}</label><br />', data.Category));
+            var $remove = $('<input type="button" value="remove" /><br />');
+            var $edit = $('<input type="button" value="edit" /><br />');
+            var $view = $('<input type="button" value="view" /><br />');
             $petData.append($imageURL);
             $petData.append($petId);
             $petData.append($petName);
             $petData.append($birthday);
             $petData.append($location);
             $petData.append($category);
+            $petData.append($remove);
+            $petData.append($edit);
+            $petData.append($view);
             $petsContainer.append($petData);
-            $petData.click(function () {
+
+            $remove.click(function () {
+                database.ref('pets/' + childSnapshot.key).remove();
+            });
+
+            $edit.click(function () {
+                //database.ref('pets/' + childSnapshot.key).remove();
+            });
+
+            $view.click(function () {
                 location.href = 'IntroducePet.html?petId=' + childSnapshot.key;
             });
+
+            
             //console.log(childSnapshot.key);
             //console.log(childSnapshot.val());
             //console.log(childSnapshot.ref);
