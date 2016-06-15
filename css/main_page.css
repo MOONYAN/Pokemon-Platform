@@ -14,12 +14,23 @@
   height: 480px;
   box-sizing: border-box;
   text-align: center; }
+  .contain-block h3 {
+    font-size: 2vw;
+    line-height: 1em;
+    margin-top: 30px;
+    margin-bottom: 20px; }
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     .contain-block {
-      height: 290px; } }
+      height: 290px; }
+      .contain-block h3 {
+        margin-top: 10px;
+        margin-bottom: 10px; } }
   @media screen and (max-width: 768px) {
     .contain-block {
-      height: 140px; } }
+      height: 140px; }
+      .contain-block h3 {
+        margin-top: 15px;
+        margin-bottom: 0px; } }
 
 .master_vision {
   position: relative;
@@ -64,30 +75,34 @@
   max-width: 100%;
   max-height: 80%;
   width: auto;
-  height: auto; }
+  height: auto;
+  border-radius: 25px; }
 
 /*web_characteristic*/
 /*about_us*/
 .about_us {
-  height: 90%;
-  padding-top: 80px;
-  padding-bottom: 80px; }
+  height: 75%;
+  padding-top: 20px;
+  padding-bottom: 20px; }
   .about_us p {
     text-align: center;
     font-size: 2vw;
     color: black; }
   @media screen and (max-width: 768px) {
     .about_us {
-      padding-top: 30px;
-      padding-bottom: 30px; } }
+      height: 70%;
+      padding-top: 15px;
+      padding-bottom: 5px; } }
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     .about_us {
-      padding-top: 10px;
-      padding-bottom: 10px; } }
+      height: 80%;
+      padding-top: 5px;
+      padding-bottom: 5px; } }
 
 .about_us_pic {
   width: auto;
-  height: inherit; }
+  height: inherit;
+  border-radius: 25px; }
 
 /*about_us*/
 /*Parallax Scrolling*/
@@ -114,13 +129,27 @@
   will-change: transform;
   background-color: white; }
 
+.parallax1 {
+  background: url("../images/parallax_background1.png");
+  background-size: cover; }
+
 .parallax1:before {
-  background: url("../images/Parallax_Scrolling1_1.png");
+  background: url("../images/parallax1.png");
+  background-size: cover; }
+  @media screen and (max-width: 768px) {
+    .parallax1:before {
+      background: none; } }
+
+.parallax2 {
+  background: url("../images/parallax_background2.png");
   background-size: cover; }
 
 .parallax2:before {
-  background: url("../images/Parallax_Scrolling1_2.png");
+  background: url("../images/parallax2.png");
   background-size: cover; }
+  @media screen and (max-width: 768px) {
+    .parallax2:before {
+      background: none; } }
 
 /*Parallax Scrolling*/
 
