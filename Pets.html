@@ -2,18 +2,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Pets</title>
+    <title>Pets</title>    
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/master.css" rel="stylesheet" />
 	<meta charset="utf-8" />
 </head>
 <body>
-    <div id = _petsContainer>
+    <div class='container' >
+        <label>
+            Cat
+            <input id="_activeRadio" name="category" type="radio" value="Cat" />
+            Dog
+            <input id="_doneRadio" name="category" type="radio" value="Dog" />
+            Other
+            <input id="_doneRadio" name="category" type="radio" value="Other" checked="checked" />
+        </label>
+    </div>    
 
+    <div class='container' >
+        <div id = _petsContainer class="row">
+
+        </div>
     </div>
 </body>
 </html>
 
-<script src="https://code.jquery.com/jquery-3.0.0.min.js" charset="utf-8"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 <script src="js/StringApi.js"></script>
 <script src="js/firebaseApi.js" charset="utf-8"></script>

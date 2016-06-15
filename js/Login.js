@@ -2,11 +2,19 @@
 var provider = new firebase.auth.FacebookAuthProvider();
 var user;
 //var testObject;
-//$(CheckLoginState);
+$(function ()
+{
+    firebase.auth().signOut();
+    sessionStorage.clear();
+});
+
+
+
+
 $('#_loginButton').click(Login);
 
 //$.when(provider).done(CheckLoginState);
-
+/*
 function CheckLoginState() {
     //var loginState = localStorage("loginState");
     $.when(sessionStorage["user"]).done(function (x) {
@@ -16,6 +24,7 @@ function CheckLoginState() {
         }
     });
 }
+*/
 
 function Login() {
     console.log('enter auto login');
@@ -63,7 +72,7 @@ function Login() {
         // ...
     });
 }
-
+/*
 function LoginSuccess() {
     //localStorage.setItem('user', user);
     //localStorage.setItem("loginState", "login");
@@ -76,3 +85,4 @@ function LoginSuccess() {
     $('#_loginButton').addClass('hide');
     //$('#_hidden').val(user.providerId);
 }
+*/

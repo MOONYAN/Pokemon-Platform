@@ -6,7 +6,7 @@ $(CheckLoginState);
 //$.when(provider).done(CheckLoginState);
 
 function CheckLoginState() {
-
+    //$('._loginAnchor a').text('Logout');
     //var loginState = localStorage("loginState");
     var x = sessionStorage["user"];
     if (x) {
@@ -34,6 +34,8 @@ function LoginSuccess() {
 
     //$('#_uidLabel').text(user.uid);
     //$('#_loginButton').addClass('hide');
-    $('._loginAnchor').addClass('hidden');
+    //$('._loginAnchor').addClass('hidden');
+    $('._loginAnchor a').text('Logout');
+    //$('._logoutAnchor').removeClass('hidden');
     //$('#_hidden').val(user.providerId);
 }

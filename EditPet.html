@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Edit Pet</title>
     <link href="css/master.css" rel="stylesheet" />
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 </head>
 <body>
     <div id="_petContent">
-        <div id="fb-root"></div>
+        <!--<div id="fb-root"></div>
         <div id="player"></div>
-        <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br />
-        <div class="fb-comments" data-numposts="5"></div><br />
+        <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <br />
+        <div class="fb-comments" data-numposts="5"></div>
+        <br />-->
         <label>
             PetName
             <input id="_petNameText" type="text" />
@@ -42,9 +44,13 @@
             <input id="_introductionText" type="text" />
         </label>
         <br />
-        <label>
+        <!--<label>
             ImageURL
             <img id="_imageURLImage" class="petImage" alt="_imageURLImage" src="#" />
+        </label>-->
+        <label>
+            ImageURL
+        <input id="_imageURLText" type="text" />
         </label>
         <br />
         <label>
@@ -59,14 +65,16 @@
         <br />
         <label>
             Active
-            <input name="state" type="radio" value="active" checked="checked" />
+            <input id="_activeRadio" name="state" type="radio" value="active" checked="checked" />
             Done
-            <input name="state" type="radio" value="done" />
+            <input id="_doneRadio" name="state" type="radio" value="done" />
         </label>
+         <input id="_updateButton" type="button" value="update" /><br />
     </div>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.0.0.min.js" charset="utf-8"></script>
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="js/RequestApi.js"></script>
 <script src="js/firebaseApi.js" charset="utf-8"></script>
 <script src="js/EditPet.js"></script>

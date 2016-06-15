@@ -18,7 +18,6 @@ function CheckLoginState() {
     });
 }
 
-
 //function Login() {
 //    console.log('enter auto login');
 //    firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -69,7 +68,8 @@ function LoginSuccess() {
 
     //$('#_uidLabel').text(user.uid);
     //$('#_loginButton').addClass('hide');
-    $('._loginAnchor').addClass('hidden');
+    //$('._loginAnchor').addClass('hidden');
+    $('._loginAnchor a').text('Logout');
     //$('#_hidden').val(user.providerId);
     LoadOnesPets();
 }
@@ -103,11 +103,11 @@ function LoadOnesPets() {
 
             $remove.click(function () {
                 database.ref('pets/' + childSnapshot.key).remove();
-                $petsContainer.remove();
+                $petData.remove();
             });
 
             $edit.click(function () {
-                //database.ref('pets/' + childSnapshot.key).remove();
+                location.href = 'EditPet.html?petId=' + childSnapshot.key;
             });
 
             $view.click(function () {
