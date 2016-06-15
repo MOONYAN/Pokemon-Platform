@@ -1,0 +1,127 @@
+.clear:after, .contain-block:after {
+  display: block;
+  content: "";
+  clear: both; }
+
+.center {
+  text-align: center; }
+
+.relative_pos {
+  position: relative; }
+
+.contain-block {
+  z-index: 3;
+  height: 480px;
+  box-sizing: border-box;
+  text-align: center; }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .contain-block {
+      height: 290px; } }
+  @media screen and (max-width: 768px) {
+    .contain-block {
+      height: 140px; } }
+
+.master_vision {
+  position: relative;
+  background-image: url("../images/master-image-background.png"); }
+  .master_vision button {
+    height: 40px;
+    width: 100px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-left: -50px;
+    color: black; }
+  @media screen and (max-width: 768px) {
+    .master_vision button {
+      height: 30px; } }
+
+.master_vision_img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto; }
+
+/*web_characteristic*/
+.web_characteristic {
+  height: inherit;
+  padding-top: 25px;
+  padding-bottom: 25px; }
+  .web_characteristic p {
+    text-align: center;
+    font-size: 2vw;
+    color: black; }
+  @media screen and (max-width: 768px) {
+    .web_characteristic {
+      padding-top: 15px;
+      padding-bottom: 15px; } }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .web_characteristic {
+      padding-top: 20px;
+      padding-bottom: 20px; } }
+
+.web_characteristic_pic {
+  max-width: 100%;
+  max-height: 80%;
+  width: auto;
+  height: auto; }
+
+/*web_characteristic*/
+/*about_us*/
+.about_us {
+  height: 90%;
+  padding-top: 80px;
+  padding-bottom: 80px; }
+  .about_us p {
+    text-align: center;
+    font-size: 2vw;
+    color: black; }
+  @media screen and (max-width: 768px) {
+    .about_us {
+      padding-top: 30px;
+      padding-bottom: 30px; } }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .about_us {
+      padding-top: 10px;
+      padding-bottom: 10px; } }
+
+.about_us_pic {
+  width: auto;
+  height: inherit; }
+
+/*about_us*/
+/*Parallax Scrolling*/
+.fixed {
+  overflow: hidden;
+  height: 480px;
+  position: relative;
+  z-index: 0; }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .fixed {
+      height: 290px; } }
+  @media screen and (max-width: 768px) {
+    .fixed {
+      height: 140px; } }
+
+.fixed:before {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  will-change: transform;
+  background-color: white; }
+
+.parallax1:before {
+  background: url("../images/Parallax_Scrolling1_1.png");
+  background-size: cover; }
+
+.parallax2:before {
+  background: url("../images/Parallax_Scrolling1_2.png");
+  background-size: cover; }
+
+/*Parallax Scrolling*/
+
+/*# sourceMappingURL=main_page.css.map */

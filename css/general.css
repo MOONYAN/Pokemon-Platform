@@ -1,0 +1,113 @@
+.clear:after, header:after, footer:after {
+  display: block;
+  content: "";
+  clear: both; }
+
+body {
+  background-color: #ffd560; }
+
+.logo {
+  height: 80%;
+  width: auto; }
+  @media screen and (max-width: 768px) {
+    .logo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto; } }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .logo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto; } }
+
+.login_status {
+  position: absolute;
+  height: 80%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 65%;
+  margin: auto 0; }
+  .login_status img {
+    width: auto;
+    height: 100%; }
+  @media screen and (max-width: 768px) {
+    .login_status {
+      left: 85%; } }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .login_status {
+      left: 92%; } }
+
+.hamburger-menu {
+  height: 80%;
+  width: auto; }
+  .hamburger-menu img {
+    height: 100%;
+    width: 100%; }
+  .hamburger-menu span {
+    padding-left: 10px; }
+
+header {
+  height: 70px;
+  position: relative;
+  padding: 10px 0;
+  background-color: #ffd500; }
+  header a {
+    color: black; }
+  header ul {
+    padding-right: 10px; }
+  header li {
+    z-index: 3; }
+  header div {
+    height: inherit; }
+  header .glyphicon {
+    z-index: 3; }
+  @media screen and (min-width: 1280px) {
+    header .hamburger-menu {
+      display: none; } }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    header {
+      height: 60px; }
+      header .nav {
+        display: none; } }
+  @media screen and (max-width: 768px) {
+    header {
+      height: 50px; }
+      header .nav {
+        display: none; }
+      header .logo {
+        height: 60%; } }
+
+#collapseOne ul {
+  list-style: none;
+  background-color: #1ce3ad; }
+#collapseOne a {
+  z-index: 100;
+  color: black; }
+
+footer {
+  background-color: #ffd500;
+  padding: 10px; }
+
+#footer-left {
+  float: left; }
+
+#footer-right {
+  float: right; }
+
+.bg_lightYellow {
+  background-color: #ffe69d; }
+
+.bg_cyan {
+  background-color: #43e2fe; }
+
+.bg_blue {
+  background-color: #38c7da; }
+
+/*# sourceMappingURL=general.css.map */

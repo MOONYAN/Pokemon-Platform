@@ -1,0 +1,35 @@
+@mixin xs {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin sm {
+    @media screen and (min-width: 768px) and (max-width: 1280px) {
+        @content;
+    }
+}
+@mixin lg {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+.clear:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.center {
+    text-align: center;
+}
+.contain-block {
+    height: 480px;
+    box-sizing: border-box;
+    text-align: center;
+    @extend .clear;
+    @include sm {
+        height: 300px;
+    }
+    @include xs {
+        height: 200px;
+    }
+}

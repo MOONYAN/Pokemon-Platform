@@ -1,0 +1,145 @@
+@mixin xs {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin sm {
+    @media screen and (min-width: 768px) and (max-width: 1280px) {
+        @content;
+    }
+}
+@mixin lg {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+.clear:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+body {
+    background-color: rgb(255, 213, 96);
+}
+.logo {
+    height: 80%;
+    width: auto;
+    @include xs {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    @include sm {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+.login_status {
+    position: absolute;
+    height: 80%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 65%;
+    margin: auto 0;
+    img {
+        width: auto;
+        height: 100%;
+    }
+    @include xs {
+        left: 85%;
+    }
+    @include sm {
+        left: 92%;
+    }
+}
+.hamburger-menu {
+    height: 80%;
+    width: auto;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+    span {
+        padding-left: 10px;
+    }
+}
+header {
+    height: 70px;
+    position: relative;
+    padding: 10px 0;
+    background-color: rgb(255, 213, 0);
+    a {
+        color: black;
+    }
+    ul {
+        padding-right: 10px;
+    }
+    li {
+        z-index: 3;
+    }
+    div {
+        height: inherit;
+    }
+    .glyphicon {
+        z-index: 3;
+    }
+    @include lg {
+        .hamburger-menu {
+            display: none;
+        }
+    }
+    @include sm {
+        height: 60px;
+        .nav {
+            display: none;
+        }
+    }
+    @include xs {
+        height: 50px;
+        .nav {
+            display: none;
+        }
+        .logo {
+            height: 60%;
+        }
+    }
+    @extend .clear;
+}
+#collapseOne {
+    ul {
+        list-style: none;
+        background-color: rgb(28, 227, 173);
+    }
+    a {
+        z-index: 100;
+        color: black;
+    }
+}
+footer {
+    background-color: rgb(255, 213, 0);
+    padding: 10px;
+    @extend .clear;
+}
+#footer-left {
+    float: left;
+}
+#footer-right {
+    float: right;
+}
+.bg_lightYellow {
+    background-color: rgb(255, 230, 157);
+}
+.bg_cyan {
+    background-color: rgb(67, 226, 254);
+}
+.bg_blue {
+    background-color: rgb(56, 199, 218);
+}
