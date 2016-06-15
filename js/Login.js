@@ -2,7 +2,7 @@
 var provider = new firebase.auth.FacebookAuthProvider();
 var user;
 //var testObject;
-$(CheckLoginState);
+//$(CheckLoginState);
 $('#_loginButton').click(Login);
 
 //$.when(provider).done(CheckLoginState);
@@ -10,16 +10,14 @@ $('#_loginButton').click(Login);
 function CheckLoginState() {
     //var loginState = localStorage("loginState");
     $.when(sessionStorage["user"]).done(function (x) {
-        if(x)
-        {
+        if (x) {
             user = JSON.parse(x);
             LoginSuccess();
         }
     });
 }
 
-function Login()
-{
+function Login() {
     console.log('enter auto login');
     //database.ref().push("YY");
     firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -37,17 +35,23 @@ function Login()
                 email: result.user.email,
                 photoURL: result.user.photoURL,
                 uid: result.user.uid,
-                providerId:result.user.providerId
-            };        
+                providerId: result.user.providerId
+            };
         //database.ref().push(user.uid);
         //database.ref('users/' + user.uid).update({ displayName: user.displayName, email: user.email });
-        sessionStorage["user"] = JSON.stringify(user);
-        setTimeout(LoginSuccess, 100);
+        
+        //setTimeout(LoginSuccess, 100);
         /*var updates = {};
         updates['users/' + user.uid + '/displayName'] = user.displayName;
         updates['users/' + user.uid + '/email'] = user.email;
         database.ref().update(updates);*/
         database.ref('users/' + user.uid).update(user);
+        database.ref('admins/' + user.uid).once("value").then(function (adminSnapshot) {
+            user.admin = adminSnapshot.exists();
+            console.log(user.admin);
+        });
+        sessionStorage["user"] = JSON.stringify(user);
+        location.href = 'index.html';
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
