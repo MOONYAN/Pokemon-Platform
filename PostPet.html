@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Post Pet</title>
+    <meta charset="utf-8" />
+    <link href="css/master.css" rel="stylesheet" />
+</head>
+<body>
+    <input id="_loginButton" type="button" value="login" /><br />
+    <label id="_displayNameLabel">name</label><br />
+    <label id="_emailLabel">email</label><br />
+    <label id="_uidLabel">uid</label><br />
+    <img id="_photoURLImage" alt="photoURL" src="#" /><br />
+
+    <div id="_petContent">
+        <label>
+            PetName
+        <input id="_petNameText" type="text" />
+        </label>
+        <br />
+        <label>
+            Gender
+        <input id="_genderText" type="text" />
+        </label>
+        <br />
+        <label>
+            Birthday
+        <input id="_birthdayText" type="text" />
+        </label>
+        <br />
+        <label>
+            Location
+        <input id="_locationText" type="text" />
+        </label>
+        <br />
+        <label>
+            Category
+        <input id="_categoryText" type="text" />
+        </label>
+        <br />
+        <label>
+            Introduction
+        <input id="_introductionText" type="text" />
+        </label>
+        <br />
+        <label>
+            ImageURL
+        <input id="_imageURLText" type="text" />
+        </label>
+        <br />
+        <label>
+            YoutubeURL
+        <input id="_youtubeURLText" type="text" />
+        </label>
+        <br />
+        <label>
+            CellPhone
+        <input id="_cellPhoneURLText" type="text" />
+        </label>
+        <br />
+        <input id="_postButton" type="button" value="Post" /><br />
+    </div>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js" charset="utf-8"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="js/firebaseApi.js" charset="utf-8"></script>
+<script src="js/PostPet.js"></script>
