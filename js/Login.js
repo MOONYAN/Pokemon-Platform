@@ -44,7 +44,7 @@ function Login() {
                 email: result.user.email,
                 photoURL: result.user.photoURL,
                 uid: result.user.uid,
-                providerId: result.user.providerId
+                providerId: result.user.providerId,
             };
         //database.ref().push(user.uid);
         //database.ref('users/' + user.uid).update({ displayName: user.displayName, email: user.email });
@@ -56,11 +56,13 @@ function Login() {
         database.ref().update(updates);*/
         database.ref('users/' + user.uid).update(user);
         database.ref('admins/' + user.uid).once("value").then(function (adminSnapshot) {
-            user.admin = adminSnapshot.exists();
-            console.log(user.admin);
+            user["admin"] = adminSnapshot.exists();
+            sessionStorage["user"] = JSON.stringify(user);
+            console.log(user);
+            location.href = 'index.html';
         });
-        sessionStorage["user"] = JSON.stringify(user);
-        location.href = 'index.html';
+        
+        //location.href = 'index.html';
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;

@@ -13,7 +13,12 @@ function CheckLoginState() {
         user = JSON.parse(x);
         console.log(user);
         LoginSuccess();
-    }    
+    }
+
+    if(sessionStorage["isAdmin"])
+    {
+        console.log('isAdmin');
+    }
     /*$.when(sessionStorage["user"]).done(function (x) {
         if (x) {
             user = JSON.parse(x);

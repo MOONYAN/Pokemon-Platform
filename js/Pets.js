@@ -1,13 +1,28 @@
 ﻿var database = firebase.database();
 var $petsContainer = $('#_petsContainer');
-$(RetrieveData);
+var isAdmin;
+var user;
 
-$('input[name="category"]').change(function ()
-{
+$('input[name="category"]').change(function () {
     $petsContainer.empty();
     RetrieveData();
 });
 
+$(function ()
+{
+    CheckAdmin();
+    RetrieveData();
+});
+
+function CheckAdmin()
+{
+    var x = sessionStorage["user"];
+    if (x) {
+        user = JSON.parse(x);
+        isAdmin = user.admin;
+    }
+    console.log(isAdmin);
+}
 
 function RetrieveData()
 {
@@ -25,6 +40,7 @@ function RetrieveData()
                 var $location = $(String.format('<label>Location:{0}</label><br />', data.Location));
                 var $category = $(String.format('<label>Category:{0}</label><br />', data.Category));
                 var $view = $('<input type="button" value="view" /><br />');
+                var $remove = $('<input type="button" value="remove" /><br />');
                 $petData.append($imageURL);
                 $petData.append($petId);
                 $petData.append($petName);
@@ -37,6 +53,16 @@ function RetrieveData()
                 $view.click(function () {
                     location.href = 'IntroducePet.html?petId=' + childSnapshot.key;
                 });
+                $remove.click(function () {
+                    database.ref('pets/' + childSnapshot.key).remove();
+                    $petData.remove();
+                });
+
+                if(isAdmin)
+                {
+                    $petData.append($remove);                    
+                }
+
                 //console.log(childSnapshot.key);
                 //console.log(childSnapshot.val());
                 //console.log(childSnapshot.ref);
