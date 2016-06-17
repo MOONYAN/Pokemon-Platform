@@ -1,0 +1,56 @@
+.PetInformationBlock {
+  margin: 10px; }
+
+.petImage {
+  position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  content: '';
+  display: block;
+  padding-top: 100%; }
+
+.PetInformation {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+  border: 2px solid black;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  padding-left: 10px;
+  padding-top: 5%;
+  padding-bottom: 5%; }
+  @media screen and (max-width: 768px) {
+    .PetInformation {
+      margin-top: 5px;
+      font-size: 1.2em; } }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .PetInformation {
+      font-size: 1.3em;
+      padding-top: 2%;
+      padding-bottom: 2%; } }
+  @media screen and (min-width: 1280px) {
+    .PetInformation {
+      font-size: 2em; } }
+
+.PetIntroductionBlock {
+  margin: 10px; }
+
+.PetIntroduction {
+  padding-left: 10px;
+  border: 2px solid black;
+  box-sizing: border-box; }
+  @media screen and (max-width: 768px) {
+    .PetIntroduction {
+      font-size: 1.2em; } }
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .PetIntroduction {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 1280px) {
+    .PetIntroduction {
+      font-size: 2em; } }
+
+/*# sourceMappingURL=IntroducePet.css.map */
