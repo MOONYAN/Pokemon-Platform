@@ -28,7 +28,7 @@ $('#_postButton').click(function () {
             State: 'active'
         };
     var petId = database.ref('pets').push(newPet).key;
-    database.ref('users/' + user.uid + '/pets/' + petId).set(true);
+    //database.ref('users/' + user.uid + '/pets/' + petId).set(true);
     console.log(petId);
     //alert(petId);
     location.href = 'IntroducePet.html?petId=' + petId;
