@@ -1,0 +1,130 @@
+@mixin xs {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin sm {
+    @media screen and (min-width: 768px) and (max-width: 1280px) {
+        @content;
+    }
+}
+@mixin lg {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
+.relative_pos {
+    position: relative;
+}
+
+.clear:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.center {
+    text-align: center;
+}
+
+.main {
+  border-style: solid;
+  border-width: 3px;
+  background-color: rgb(67,226,254);
+  height: 100%;
+}
+
+.tabTable {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  @include sm {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  @include xs {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+}
+
+.tabTable2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  @include sm {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  @include xs {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.tab {
+  border-style: solid;
+  border-width: 3px;
+  font-weight:bold;
+  font-size:2vw;
+  background-color: rgb(56,199,216);
+  text-align: center;
+  cursor: pointer;
+}
+
+.pet {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.petPicture {
+  padding-left: 0px;
+  padding-right: 0px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.petContext {
+  border-style: solid;
+  border-width: 3px;
+  font-size:1vw;
+  background-color: rgb(56,199,216);
+}
+
+.petBut {
+  border-style: solid;
+  border-width: 3px;
+  border-top: none;
+  background-color: rgb(56,199,216);
+}
+
+.but {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  font-size:5vw;
+  padding: 5px;
+}
+
+.left {
+  margin-bottom: 15px;
+  font-size:2vw;
+  text-align: right;
+  cursor: pointer;
+  float: right;
+}
+
+.right {
+  margin-bottom: 15px;
+  font-size:2vw;
+  text-align: left;
+  cursor: pointer;
+  float: right;
+}
+
+.page {
+  width: 60px;
+  margin: 0px 0px 15px 0px;
+  text-align: center;
+  float: right;
+}
