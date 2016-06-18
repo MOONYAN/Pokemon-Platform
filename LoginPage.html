@@ -4,15 +4,81 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Login Page</title>
 	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/general.css" rel="stylesheet">
+
+  <link href="css/font-awesome.css" rel="stylesheet">
+
+  <link href="css/bootstrap-social.css" rel="stylesheet" >
+  <link href="css/login_page.css" rel="stylesheet" >
+  <!-- <link href="css/main_page.css" rel="stylesheet"> -->
 </head>
 <body>
+  <header class="container">
+      <div class="row">
+          <a class="hamburger-menu pull-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <h4><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></h4>
+          </a>
+          <div class="login_status">
+              <img id="_photoURLImage" src="images/cat-pets-cute-nearby-allatportre.jpg" alt="" />
+          </div>
+          <a href="index.html">
+              <img class="logo col-lg-2 col-lg-offset-0" src="images/logo_petfinder.png" alt="" />
+          </a>
+          <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="about_us.html">About us</a>
+              </li>
+              <li>
+                  <a href="Pets.html">Pets</a>
+              </li>
+              <li class="_loginAnchor">
+                  <a href="LoginPage.html">Login</a>
+              </li>
+              <li>
+                  <a href="user.html">Myself</a>
+              </li>
+          </ul>
+      </div>
+  </header>
+  <div class="container">
+      <div class="row">
+          <div id="collapseOne" class="collapse">
+              <ul class="nav">
+                  <li>
+                      <a href="about_us.html">About us</a>
+                  </li>
+                  <li>
+                      <a href="Pets.html">Pets</a>
+                  </li>
+                  <li class="_loginAnchor">
+                      <a href="LoginPage.html">Login</a>
+                  </li>
+                  <li>
+                      <a href="user.html">Myself</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
 
-    <input id="_loginButton" type="button" value="login" /><br />
-    <label id="_displayNameLabel">name</label><br />
-    <label id="_emailLabel">email</label><br />
+    <div id="login-background">
+      <a id="_loginButton" class="btn-lg btn btn-block btn-social btn-facebook ">
+        <span class="fa fa-facebook"></span> 使用Facebook帳號登入
+      </a>
+    </div>
+    
+    <footer class="container">
+        <span id="footer-left">copyright&copy2016</span>
+        <span id="footer-right">tel:0800-xxx-xxx</span>
+    </footer>
+    <!-- <label id="_displayNameLabel">name</label><br />
+    <label id="_emailLabel">email</label><br /> -->
     <!--<label id="_photoURLLabel">photoURL</label><br />-->
-    <label id="_uidLabel">uid</label><br />
-    <img id="_photoURLImage" alt="photoURL" src="#" />
+    <!-- <label id="_uidLabel">uid</label><br />
+    <img id="_photoURLImage" alt="photoURL" src="#" /> -->
+
 </body>
 </html>
 
@@ -20,3 +86,7 @@
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 <script src="js/firebaseApi.js" charset="utf-8"></script>
 <script src="js/Login.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<!-- <script src="js/index.js"></script> -->
