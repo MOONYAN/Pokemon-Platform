@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -62,12 +62,10 @@
         </div>
         <div class="container" id="_petContent">
             <div id="fb-root"></div>
-            <!--<div id="player"></div>-->
             <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br/>
             <div class="row PetInformationBlock">
                 <div class="col-xs-12 col-sm-4 col-lg-4">
-                    <div id="_imageURLImage" class="petImage" style="background-image:url(images/mousecat.png);"></div>
-                    <!--<div id="_imageURLImage" class="petImage" alt="_imageURLImage" src="#"></div>-->
+                    <div id="_imageURLImage" class="petImage"></div>
                 </div>
                 <!--col-xs-12 col-sm-4 col-lg-4-->
                 <div class="col-xs-12 col-sm-8 col-lg-8">
@@ -75,50 +73,32 @@
                         <label>
                             PetName:
                         </label>
-                        <label>
-                            OAO
-                            <!--<input id="_petNameText" type="text"/>-->
-                        </label>
+                        <label id="_petNameText"></label>
                         <br/>
                         <label>
                             Gender:
                         </label>
-                        <label>
-                            Female
-                            <!--<input id="_genderText" type="text"/>-->
-                        </label>
+                        <label id="_genderText" type="text"></label>
                         <br/>
                         <label>
                             Birthday:
                         </label>
-                        <label>
-                            2014/05/03
-                            <!--<input id="_birthdayText" type="text"/>-->
-                        </label>
+                        <label id="_birthdayText" type="text"></label>
                         <br/>
                         <label>
                             Location:
                         </label>
-                        <label>
-                            xxx
-                            <!--<input id="_locationText" type="text"/>-->
-                        </label>
+                        <label id="_locationText" type="text"></label>
                         <br/>
                         <label>
                             Category:
                         </label>
-                        <label>
-                            xxxxx
-                            <!--<input id="_categoryText" type="text"/>-->
-                        </label>
+                        <label id="_categoryText" type="text"></label>
                         <br/>
                         <label>
                             CellPhone:
                         </label>
-                        <label>
-                            09xx-xxx-xxx
-                            <!--<input id="_cellPhoneURLText" type="text"/>-->
-                        </label>
+                        <label id="_cellPhoneURLText" type="text"></label>
                         <br/>
                     </div>
                     <!--PetInformation-->
@@ -133,21 +113,22 @@
                             Introduction:
                         </label>
                         <br/>
-                        <label>
-                            Hello, I'm OAO.
-                            <!--<input id="_introductionText" type="text"/>-->
-                        </label>
+                        <label id="_introductionText" type="text"></label>
                         <br/>
+                        <div id="player" class="YouTubePlayer"></div>
                     </div>
                     <!--PetIntroduction-->
                 </div>
                 <!--col-xs-12 col-sm-12 col-lg-12-->
             </div>
             <!--PetIntroductionBlock-->
-            <div class="col-xs-12 col-sm-12 col-lg-12">
-                <div class="fb-comments" data-numposts="5"></div><br/>
+            <div class="row FBComments">
+                <div class="col-xs-12 col-sm-12 col-lg-12">
+                    <div class="fb-comments" data-numposts="5"></div><br/>
+                </div>
+                <!--col-xs-12 col-sm-12 col-lg-12-->
             </div>
-            <!--col-xs-12 col-sm-12 col-lg-12-->
+            <!--FBComments-->
             <!--<label>
             YoutubeURL
         <input id="_youtubeURLText" type="text" />

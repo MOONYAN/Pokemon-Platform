@@ -8,7 +8,7 @@ function Start() {
     petId = Request.parameter('petId');
     if (!petId)
     {
-        $('#_petContent').addClass('hide');
+        //$('#_petContent').addClass('hide');
         console.log('none petId');
     }
     else
@@ -24,14 +24,14 @@ function RetrieveData() {
     var petRef = database.ref('pets/' + petId);
     petRef.once("value").then(function (snapshot) {
         petData = snapshot.val();
-        $('#_petNameText').val(petData.PetName);
-        $('#_genderText').val(petData.Gender);
-        $('#_birthdayText').val(petData.Birthday);
-        $('#_locationText').val(petData.Location);
-        $('#_categoryText').val(petData.Category);
-        $('#_introductionText').val(petData.Introduction);
-        //$('#_imageURLText').val(petData.ImageURL);
-        $('#_imageURLImage').attr("src", petData.ImageURL);
+        $('#_petNameText').text(petData.PetName);
+        $('#_genderText').text(petData.Gender);
+        $('#_birthdayText').text(petData.Birthday);
+        $('#_locationText').text(petData.Location);
+        $('#_categoryText').text(petData.Category);
+        $('#_introductionText').text(petData.Introduction);
+        var _imageURL = "url(" + petData.ImageURL + ")";
+        $('#_imageURLImage').css("background-image", _imageURL);
         //$('#_youtubeURLText').val(petData.YoutubeURL);
         player.cueVideoById(petData.YoutubeURL);
         $('#_cellPhoneURLText').val(petData.CellPhone);
