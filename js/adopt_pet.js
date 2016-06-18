@@ -146,6 +146,10 @@ function RetrieveData()
                     $remove.click(function () {
                       database.ref('pets/' + childSnapshot.key).remove();
                       $petData.remove();
+                      temp=snapshot.numChildren();
+                      CulculatePage();
+                      $petsContainer.empty();
+                      RetrieveData();
                     });
 
                     if(isAdmin)
