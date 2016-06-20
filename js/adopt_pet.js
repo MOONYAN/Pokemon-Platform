@@ -96,6 +96,8 @@ function CheckAdmin()
     var x = sessionStorage["user"];
     if (x) {
         user = JSON.parse(x);
+        $('#_photoURLImage').attr("src", user.photoURL);
+        $('._loginAnchor a').text('Logout');
         isAdmin = user.admin;
     }
     console.log(isAdmin);
