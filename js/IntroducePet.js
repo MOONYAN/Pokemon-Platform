@@ -3,6 +3,7 @@ var database = firebase.database();
 var petId;
 var petData;
 var player;
+var user;
 $(Start);
 function Start() {
     petId = Request.parameter('petId');
@@ -19,8 +20,8 @@ function Start() {
     }
     else
     {
-        $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/?petId=" + petId);
-        $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/?petId=" + petId);
+        $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
+        $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
         console.log(petId);
         RetrieveData();
     }
@@ -43,9 +44,15 @@ function RetrieveData() {
         $('#_youtubeURL').attr("href", "https://youtu.be/" + petData.YoutubeURL);
         $('#_youtubeURL').text("Click me watch the introduction video");
         $('#_cellPhoneURLText').val(petData.CellPhone);
+
+        player = new YT.Player('player', {
+            height: '390',
+            width: '100%',
+            videoId: petData.YoutubeURL
+        });
     });
 }
-
+/*
 function onYouTubeIframeAPIReady()
 {
     player = new YT.Player('player', {
@@ -54,7 +61,7 @@ function onYouTubeIframeAPIReady()
         //videoId: petData.YoutubeURL
     });
 }
-
+*/
 function LoginSuccess()
 {
     $('#_photoURLImage').attr("src", user.photoURL);
