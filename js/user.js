@@ -1,4 +1,5 @@
-﻿var provider = new firebase.auth.FacebookAuthProvider();
+﻿
+var provider = new firebase.auth.FacebookAuthProvider();
 var database = firebase.database();
 var $petsContainer = $('#_petsContainer');
 var user;
@@ -10,10 +11,12 @@ $(CheckLoginState);
 
 function CheckLoginState() {
     //var loginState = localStorage("loginState");
-    $.when(sessionStorage["user"]).done(function (x) {
+    $.when(sessionStorage["user"]).done(function(x) {
         if (x) {
             user = JSON.parse(x);
             LoginSuccess();
+        } else {
+            LoginFail();
         }
     });
 }
@@ -69,16 +72,21 @@ function LoginSuccess() {
     //$('#_uidLabel').text(user.uid);
     //$('#_loginButton').addClass('hide');
     //$('._loginAnchor').addClass('hidden');
-    $('._loginAnchor a').text('Logout');
+    $('._loginAnchor a').text('登出');
     //$('#_hidden').val(user.providerId);
     LoadOnesPets();
+}
+
+function LoginFail() {
+    $('._user').addClass("hide");
+    $('#_photoURLImage').addClass("hide");
 }
 
 
 function LoadOnesPets() {
     var reference = database.ref('pets').orderByChild('Uid').equalTo(user.uid);
-    reference.once("value").then(function (snapshot) {
-        snapshot.forEach(function (childSnapshot) {
+    reference.once("value").then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
             var data = childSnapshot.val();
             var $petData = $('<div class="row"></div>');
             var $petId = $(String.format('<div class="col-xs-3 col-sm-3 col-lg-3 bg_blue">{0}</div>', childSnapshot.key));
@@ -101,16 +109,16 @@ function LoadOnesPets() {
 
             $petsContainer.append($petData);
 
-            $remove.click(function () {
+            $remove.click(function() {
                 database.ref('pets/' + childSnapshot.key).remove();
                 $petData.remove();
             });
 
-            $edit.click(function () {
+            $edit.click(function() {
                 location.href = 'EditPet.html?petId=' + childSnapshot.key;
             });
 
-            $view.click(function () {
+            $view.click(function() {
                 location.href = 'IntroducePet.html?petId=' + childSnapshot.key;
             });
 
@@ -159,7 +167,7 @@ function LoadOnesPets() {
 //                location.href = 'IntroducePet.html?petId=' + childSnapshot.key;
 //            });
 
-            
+
 //            //console.log(childSnapshot.key);
 //            //console.log(childSnapshot.val());
 //            //console.log(childSnapshot.ref);

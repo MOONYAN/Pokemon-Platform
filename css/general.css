@@ -9,7 +9,7 @@ body {
 .logo {
   height: 80%;
   width: auto; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .logo {
       position: absolute;
       left: 0;
@@ -17,7 +17,7 @@ body {
       top: 0;
       bottom: 0;
       margin: auto; } }
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .logo {
       position: absolute;
       left: 0;
@@ -37,10 +37,10 @@ body {
   .login_status img {
     width: auto;
     height: 100%; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .login_status {
       left: 85%; } }
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .login_status {
       left: 92%; } }
 
@@ -68,15 +68,15 @@ header {
     height: inherit; }
   header .glyphicon {
     z-index: 3; }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     header .hamburger-menu {
       display: none; } }
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     header {
       height: 60px; }
       header .nav {
         display: none; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     header {
       height: 50px; }
       header .nav {

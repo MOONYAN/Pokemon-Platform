@@ -19,13 +19,13 @@
     line-height: 1em;
     margin-top: 30px;
     margin-bottom: 20px; }
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .contain-block {
       height: 290px; }
       .contain-block h3 {
         margin-top: 10px;
         margin-bottom: 10px; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .contain-block {
       height: 140px; }
       .contain-block h3 {
@@ -35,7 +35,7 @@
 .master_vision {
   position: relative;
   background-image: url("../images/master-image-background.png"); }
-  .master_vision a {
+  .master_vision button {
     height: 40px;
     width: 100px;
     position: absolute;
@@ -43,8 +43,8 @@
     left: 50%;
     margin-left: -50px;
     color: black; }
-  @media screen and (max-width: 768px) {
-    .master_vision a {
+  @media screen and (max-width: 767px) {
+    .master_vision button {
       height: 30px; } }
 
 .master_vision_img {
@@ -62,11 +62,11 @@
     text-align: center;
     font-size: 2vw;
     color: black; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .web_characteristic {
       padding-top: 15px;
       padding-bottom: 15px; } }
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .web_characteristic {
       padding-top: 20px;
       padding-bottom: 20px; } }
@@ -88,12 +88,12 @@
     text-align: center;
     font-size: 2vw;
     color: black; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .about_us {
       height: 70%;
       padding-top: 15px;
       padding-bottom: 5px; } }
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .about_us {
       height: 80%;
       padding-top: 5px;
@@ -111,10 +111,10 @@
   height: 480px;
   position: relative;
   z-index: 0; }
-  @media screen and (min-width: 768px) and (max-width: 1280px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .fixed {
       height: 290px; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .fixed {
       height: 140px; } }
 
@@ -136,7 +136,7 @@
 .parallax1:before {
   background: url("../images/parallax1.png");
   background-size: cover; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .parallax1:before {
       background: none; } }
 
@@ -147,7 +147,7 @@
 .parallax2:before {
   background: url("../images/parallax2.png");
   background-size: cover; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .parallax2:before {
       background: none; } }
 
