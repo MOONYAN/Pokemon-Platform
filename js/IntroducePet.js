@@ -33,11 +33,18 @@ function RetrieveData() {
         var _imageURL = "url(" + petData.ImageURL + ")";
         $('#_imageURLImage').css("background-image", _imageURL);
         //$('#_youtubeURLText').val(petData.YoutubeURL);
-        player.cueVideoById(petData.YoutubeURL);
+        //player.cueVideoById(petData.YoutubeURL);
+
         $('#_cellPhoneURLText').val(petData.CellPhone);
+
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: petData.YoutubeURL
+        });
     });
 }
-
+/*
 function onYouTubeIframeAPIReady()
 {
     player = new YT.Player('player', {
@@ -46,3 +53,4 @@ function onYouTubeIframeAPIReady()
         //videoId: petData.YoutubeURL
     });
 }
+*/
