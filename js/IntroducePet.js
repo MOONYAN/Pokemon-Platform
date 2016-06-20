@@ -19,8 +19,8 @@ function Start() {
     }
     else
     {
-        $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/?petId=" + petId);
-        $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/?petId=" + petId);
+        $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
+        $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
         console.log(petId);
         RetrieveData();
     }
@@ -39,11 +39,17 @@ function RetrieveData() {
         var _imageURL = "url(" + petData.ImageURL + ")";
         $('#_imageURLImage').css("background-image", _imageURL);
         //$('#_youtubeURLText').val(petData.YoutubeURL);
-        player.cueVideoById(petData.YoutubeURL);
+        //player.cueVideoById(petData.YoutubeURL);
         $('#_cellPhoneURLText').val(petData.CellPhone);
+
+        player = new YT.Player('player', {
+            height: '390',
+            width: '100%',
+            videoId: petData.YoutubeURL
+        });
     });
 }
-
+/*
 function onYouTubeIframeAPIReady()
 {
     player = new YT.Player('player', {
@@ -52,7 +58,7 @@ function onYouTubeIframeAPIReady()
         //videoId: petData.YoutubeURL
     });
 }
-
+*/
 function LoginSuccess()
 {
     $('#_photoURLImage').attr("src", user.photoURL);
