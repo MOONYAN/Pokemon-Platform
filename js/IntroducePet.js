@@ -40,28 +40,33 @@ function RetrieveData() {
         var _imageURL = "url(" + petData.ImageURL + ")";
         $('#_imageURLImage').css("background-image", _imageURL);
         //$('#_youtubeURLText').val(petData.YoutubeURL);
-        player.cueVideoById(petData.YoutubeURL);
-        $('#_youtubeURL').attr("href", "https://youtu.be/" + petData.YoutubeURL);
+        //player.cueVideoById(petData.YoutubeURL);
+        $('#_youtubeURL').attr("href", "https://www.youtube.com/watch?v=" + petData.YoutubeURL);
         $('#_youtubeURL').text("Click me watch the introduction video");
         $('#_cellPhoneURLText').val(petData.CellPhone);
 
-        player = new YT.Player('player', {
+        $.when(player).done(function (x) {
+            x.cueVideoById(petData.YoutubeURL);
+        });
+
+        /*player = new YT.Player('player', {
             height: '390',
             width: '100%',
             videoId: petData.YoutubeURL
-        });
+        });*/
     });
 }
-/*
+
 function onYouTubeIframeAPIReady()
 {
+
     player = new YT.Player('player', {
         height: '390',
-        width: '640',
+        width: '100%',
         //videoId: petData.YoutubeURL
     });
 }
-*/
+
 function LoginSuccess()
 {
     $('#_photoURLImage').attr("src", user.photoURL);
