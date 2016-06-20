@@ -6,7 +6,12 @@ var player;
 $(Start);
 function Start() {
     petId = Request.parameter('petId');
-    LoginSuccess();
+    var x = sessionStorage["user"];
+    if (x) {
+        user = JSON.parse(x);
+        console.log(user);
+        LoginSuccess();
+    }
     if (!petId)
     {
         $('#_petContent').addClass('hide');
