@@ -6,6 +6,7 @@ var player;
 $(Start);
 function Start() {
     petId = Request.parameter('petId');
+    LoginSuccess();
     if (!petId)
     {
         $('#_petContent').addClass('hide');
@@ -18,7 +19,6 @@ function Start() {
         console.log(petId);
         RetrieveData();
     }
-    LoginSuccess();
 }
 
 function RetrieveData() {
@@ -48,20 +48,8 @@ function onYouTubeIframeAPIReady()
     });
 }
 
-function LoginSuccess() {
-    //localStorage.setItem('user', user);
-    //localStorage.setItem("loginState", "login");
-    //sessionStorage["loginState"] = "login";
-
-    //$('#_displayNameLabel').text(user.displayName);
-    //$('#_emailLabel').text(user.email);
-    //$('#_photoURLLabel').text(user.photoURL);
+function LoginSuccess()
+{
     $('#_photoURLImage').attr("src", user.photoURL);
-
-    //$('#_uidLabel').text(user.uid);
-    //$('#_loginButton').addClass('hide');
-    //$('._loginAnchor').addClass('hidden');
     $('._loginAnchor a').text('Logout');
-    //$('._logoutAnchor').removeClass('hidden');
-    //$('#_hidden').val(user.providerId);
 }
