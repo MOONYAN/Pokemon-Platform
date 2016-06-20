@@ -13,13 +13,11 @@ function Start() {
         console.log(user);
         LoginSuccess();
     }
-    if (!petId)
-    {
+    if (!petId) {
         $('#_petContent').addClass('hide');
         console.log('none petId');
     }
-    else
-    {
+    else {
         $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
         $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
         console.log(petId);
@@ -45,30 +43,27 @@ function RetrieveData() {
         $('#_youtubeURL').text("Click me watch the introduction video");
         $('#_cellPhoneURLText').val(petData.CellPhone);
 
-        $.when(player).done(function (x) {
-            x.cueVideoById(petData.YoutubeURL);
-        });
-
-        /*player = new YT.Player('player', {
-            height: '390',
-            width: '100%',
-            videoId: petData.YoutubeURL
-        });*/
+        if(player)
+        {
+            player.cueVideoById(petData.YoutubeURL);
+        }
     });
 }
 
-function onYouTubeIframeAPIReady()
-{
+function onYouTubeIframeAPIReady() {
 
     player = new YT.Player('player', {
         height: '390',
         width: '100%',
         //videoId: petData.YoutubeURL
     });
+    if(petData)
+    {
+        player.cueVideoById(petData.YoutubeURL);
+    }
 }
 
-function LoginSuccess()
-{
+function LoginSuccess() {
     $('#_photoURLImage').attr("src", user.photoURL);
     $('._loginAnchor a').text('Logout');
 }
