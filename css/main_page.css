@@ -35,7 +35,7 @@
 .master_vision {
   position: relative;
   background-image: url("../images/master-image-background.png"); }
-  .master_vision button {
+  .master_vision a {
     height: 40px;
     width: 100px;
     position: absolute;
@@ -44,7 +44,7 @@
     margin-left: -50px;
     color: black; }
   @media screen and (max-width: 768px) {
-    .master_vision button {
+    .master_vision a {
       height: 30px; } }
 
 .master_vision_img {
