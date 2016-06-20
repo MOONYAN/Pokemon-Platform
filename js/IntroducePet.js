@@ -40,6 +40,8 @@ function RetrieveData() {
         $('#_imageURLImage').css("background-image", _imageURL);
         //$('#_youtubeURLText').val(petData.YoutubeURL);
         player.cueVideoById(petData.YoutubeURL);
+        $('#_youtubeURL').attr("href", "https://youtu.be/" + petData.YoutubeURL);
+        $('#_youtubeURL').text("Click me watch the introduction video");
         $('#_cellPhoneURLText').val(petData.CellPhone);
     });
 }

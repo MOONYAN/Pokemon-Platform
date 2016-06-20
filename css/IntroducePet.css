@@ -53,4 +53,14 @@
     .PetIntroduction {
       font-size: 2em; } }
 
+@media screen and (max-width: 768px) {
+  .YouTubePlayer {
+    display: none; } }
+
+#_youtubeURL {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    #_youtubeURL {
+      display: inline; } }
+
 /*# sourceMappingURL=IntroducePet.css.map */
