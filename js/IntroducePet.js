@@ -3,6 +3,7 @@ var database = firebase.database();
 var petId;
 var petData;
 var player;
+var user;
 $(Start);
 function Start() {
     petId = Request.parameter('petId');
