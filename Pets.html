@@ -11,24 +11,41 @@
     <body>
         <!-- header -->
         <header class="container">
-            <div class="row">
-                <a class="hamburger-menu pull-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h4>
-                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                    </h4>
-                </a>
-                <div class="login_status">
-                    <img id="_photoURLImage" src="images/cat-pets-cute-nearby-allatportre.jpg" alt=""/>
-                </div>
-                <a href="index.html">
-                    <img class="logo col-lg-2 col-lg-offset-0" src="images/logo_petfinder.png" alt=""/>
-                </a>
-                <ul class="nav navbar-nav navbar-right">
+        <div class="row">
+            <a class="hamburger-menu pull-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h4><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></h4>
+            </a>
+            <div class="login_status">
+                <img id="_photoURLImage" src="images/cat-pets-cute-nearby-allatportre.jpg" alt="" />
+            </div>
+            <a href="index.html">
+                <img class="logo col-lg-2 col-lg-offset-0" src="images/logo_petfinder.png" alt="" />
+            </a>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="about_us.html">About us</a>
+                </li>
+                <li>
+                    <a href="adopt_pet.html">Pets</a>
+                </li>
+                <li class="_loginAnchor">
+                    <a href="LoginPage.html">Login</a>
+                </li>
+                <li>
+                    <a href="user.html">Myself</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div id="collapseOne" class="collapse">
+                <ul class="nav">
                     <li>
                         <a href="about_us.html">About us</a>
                     </li>
                     <li>
-                        <a href="Pets.html">Pets</a>
+                        <a href="adopt_pet.html">Pets</a>
                     </li>
                     <li class="_loginAnchor">
                         <a href="LoginPage.html">Login</a>
@@ -38,42 +55,24 @@
                     </li>
                 </ul>
             </div>
-        </header>
-        <div class="container">
-            <div class="row">
-                <div id="collapseOne" class="collapse">
-                    <ul class="nav">
-                        <li>
-                            <a href="about_us.html">About us</a>
-                        </li>
-                        <li>
-                            <a href="Pets.html">Pets</a>
-                        </li>
-                        <li class="_loginAnchor">
-                            <a href="LoginPage.html">Login</a>
-                        </li>
-                        <li>
-                            <a href="user.html">Myself</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
+    </div>
         <!-- end header -->
 
         <!-- main -->
         <div class="container main">
             <!-- tab -->
-            <div>
-                <div class="col-lg-2 col-sm-4 col-xs-4 tabTable"><div class="tab">Dog</div></div>
-                <div class="col-lg-2 col-sm-4 col-xs-4 tabTable"><div class="tab">Cat</div></div>
-                <div class="col-lg-2 col-sm-4 col-xs-4 tabTable"><div class="tab">Rat</div></div>
-                <div class="col-lg-2 col-sm-4 col-xs-4 tabTable2"><div class="tab">Rabbit</div></div>
-                <div class="col-lg-2 col-sm-4 col-xs-4 tabTable2"><div class="tab">Bird</div></div>
-                <div class="col-lg-2 col-sm-4 col-xs-4 tabTable2"><div class="tab">Others</div></div>
+            <div class="row">
+              <div class="col-lg-2 col-sm-4 col-xs-4 tabTable"><button type="button" class="btn btn-info btn-block tab">Dog</button></div>
+              <div class="col-lg-2 col-sm-4 col-xs-4 tabTable"><button type="button" class="btn btn-info btn-block tab">Cat</button></div>
+              <div class="col-lg-2 col-sm-4 col-xs-4 tabTable"><button type="button" class="btn btn-info btn-block tab">Rat</button></div>
+              <div class="col-lg-2 col-sm-4 col-xs-4 tabTable2"><button type="button" class="btn btn-info btn-block tab">Rabbit</button></div>
+              <div class="col-lg-2 col-sm-4 col-xs-4 tabTable2"><button type="button" class="btn btn-info btn-block tab">Bird</button></div>
+              <div class="col-lg-2 col-sm-4 col-xs-4 tabTable2"><button type="button" class="btn btn-info btn-block tab">Others</button></div>
             </div>
             <!-- end tab -->
             <div class="row" id = _petsContainer>
+                
             </div>
             <!-- change page -->
             <div class="row">
