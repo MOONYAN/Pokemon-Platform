@@ -1,9 +1,9 @@
 
 * {
-  -webkit-transition: 500ms ease-out;
-  -moz-transition: 500ms ease-out;
-  -o-transition: 500ms ease-out;
-  transition: 500ms ease-out;
+  -webkit-transition: 300ms ease-out;
+  -moz-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+  transition: 300ms ease-out;
 }
 
 #login-background{
