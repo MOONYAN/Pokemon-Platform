@@ -1,4 +1,4 @@
-﻿//var database = firebase.database();
+﻿ //var database = firebase.database();
 //var provider = new firebase.auth.FacebookAuthProvider();
 var user;
 $(CheckLoginState);
@@ -13,10 +13,11 @@ function CheckLoginState() {
         user = JSON.parse(x);
         console.log(user);
         LoginSuccess();
+    } else {
+        LoginFail();
     }
 
-    if(sessionStorage["isAdmin"])
-    {
+    if (sessionStorage["isAdmin"]) {
         console.log('isAdmin');
     }
     /*$.when(sessionStorage["user"]).done(function (x) {
@@ -43,4 +44,9 @@ function LoginSuccess() {
     $('._loginAnchor a').text('Logout');
     //$('._logoutAnchor').removeClass('hidden');
     //$('#_hidden').val(user.providerId);
+}
+
+function LoginFail() {
+    $('._user').addClass("hide");
+    $('#_photoURLImage').addClass("hide");
 }

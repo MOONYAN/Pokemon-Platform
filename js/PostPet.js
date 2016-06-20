@@ -45,6 +45,7 @@ function CheckLoginState() {
         {
             $('#_petContent').addClass('hide');
             console.log('add');
+            LoginFail();
         }
     });
 }
@@ -98,4 +99,9 @@ function LoginSuccess() {
     $('#_loginButton').addClass('hide');
     $('#_petContent').removeClass('hide');
     //$('#_hidden').val(user.providerId);
+}
+
+function LoginFail() {
+    $('._user').addClass("hide");
+    $('#_photoURLImage').addClass("hide");
 }

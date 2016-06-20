@@ -52,6 +52,7 @@ function CheckLoginState() {
         else {
             $('#_petContent').addClass('hide');
             console.log('add');
+            LoginFail();
         }
     });
 }
@@ -71,6 +72,11 @@ function LoginSuccess() {
     $('._loginAnchor').addClass('hidden');
     //$('#_hidden').val(user.providerId);
     $('#_petContent').removeClass('hide');
+}
+
+function LoginFail() {
+    $('._user').addClass("hide");
+    $('#_photoURLImage').addClass("hide");
 }
 
 function RetrieveData() {
