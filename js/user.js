@@ -72,7 +72,7 @@ function LoginSuccess() {
     //$('#_uidLabel').text(user.uid);
     //$('#_loginButton').addClass('hide');
     //$('._loginAnchor').addClass('hidden');
-    $('._loginAnchor a').text('Logout');
+    $('._loginAnchor a').text('登出');
     //$('#_hidden').val(user.providerId);
     LoadOnesPets();
 }

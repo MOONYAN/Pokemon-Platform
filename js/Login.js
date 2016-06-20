@@ -83,7 +83,7 @@ function Login() {
 
 function LoginSuccess() {
     $('#_photoURLImage').attr("src", user.photoURL);
-    $('._loginAnchor a').text('Logout');
+    $('._loginAnchor a').text('登出');
 }
 
 function LoginFail() {

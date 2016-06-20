@@ -16,6 +16,7 @@ $(CheckLoginState);
 }*/
 
 $('#_updateButton').click(function () {
+  console.log("click");
     var adjustPet =
         {
             PetName: $('#_petNameText').val(),
