@@ -19,7 +19,7 @@ $('#_postButton').click(function () {
             Gender: $('#_genderText').val(),
             Birthday: $('#_birthdayText').val(),
             Location: $('#_locationText').val(),
-            Category: $('#_categoryText').val(),
+            Category: $('input[name="category"]:checked').val(),
             Introduction: $('#_introductionText').val(),
             ImageURL: $('#_imageURLText').val(),
             YoutubeURL: $('#_youtubeURLText').val().replace("https://www.youtube.com/watch?v=", ""),
