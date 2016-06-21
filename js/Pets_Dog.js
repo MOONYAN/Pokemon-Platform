@@ -97,10 +97,8 @@ function CheckAdmin()
     if (x) {
         user = JSON.parse(x);
         $('#_photoURLImage').attr("src", user.photoURL);
-        $('._loginAnchor a').text('登出');
+        $('._loginAnchor a').text('Logout');
         isAdmin = user.admin;
-    } else {
-        LoginFail();
     }
     console.log(isAdmin);
 }
@@ -125,10 +123,10 @@ function RetrieveData()
                     var $petData = $('<div class="col-lg-4 col-sm-4 col-xs-12 pet"></div>');
                     var $imageURL = $(String.format('<div class="col-lg-12 col-sm-12 col-xs-3 petPicture" style="background-image: url({0});"></div>' , data.ImageURL));
                     var $petFrame = $('<div class="col-lg-12 col-sm-12 col-xs-9 petContext"></div>');
-                    var $petId = $(String.format('<div class="number">PetId:{0}</div>', childSnapshot.key));
-                    var $petName = $(String.format('<div class="number">PetName:{0}</div>', data.PetName));
-                    var $birthday = $(String.format('<div class="number">Birthday:{0}</div>', data.Birthday));
-                    var $location = $(String.format('<div class="number">Location:{0}</div>', data.Location));
+                    var $petId = $(String.format('<div class="number">寵物ID:{0}</div>', childSnapshot.key));
+                    var $petName = $(String.format('<div class="number">寵物名字:{0}</div>', data.PetName));
+                    var $birthday = $(String.format('<div class="number">生日:{0}</div>', data.Birthday));
+                    var $location = $(String.format('<div class="number">地址:{0}</div>', data.Location));
 //                var $category = $(String.format('<div class="number">Category:{0}</div>', data.Category));
 //                var $view = $('<input type="button" value="view" />');
                     var $remove = $('<span class="glyphicon glyphicon-remove-circle but"></span>');
@@ -170,9 +168,4 @@ function RetrieveData()
             CheckPictureHeight();
         });
     });
-}
-
-function LoginFail() {
-    $('._user').addClass("hide");
-    $('#_photoURLImage').addClass("hide");
 }
