@@ -17,4 +17,23 @@
     .contain-block {
       height: 200px; } }
 
+.edit_row {
+  position: relative;
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 6px; }
+  .edit_row .btn-default {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 0;
+    margin-bottom: 5px; }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .edit_row {
+      height: 70px; } }
+  @media screen and (max-width: 767px) {
+    .edit_row {
+      height: 100px; } }
+
 /*# sourceMappingURL=user.css.map */

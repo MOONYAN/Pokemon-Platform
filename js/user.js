@@ -89,14 +89,14 @@ function LoadOnesPets() {
         snapshot.forEach(function(childSnapshot) {
             var data = childSnapshot.val();
             var $petData = $('<div class="row"></div>');
-            var $petId = $(String.format('<div class="col-xs-3 col-sm-3 col-lg-3 bg_blue">{0}</div>', childSnapshot.key));
-            var $petName = $(String.format('<div class="col-xs-3 col-sm-3 col-lg-3 bg_cyan">{0}</div>', data.PetName));
-            var $state = $(String.format('<div class="col-xs-3 col-sm-3 col-lg-3 bg_blue">{0}</div>', data.State));
-            var $command = $('<div class="col-xs-3 col-sm-3 col-lg-3 bg_cyan"></div>');
+            var $petId = $(String.format('<div class="col-xs-3 col-sm-3 col-lg-3 edit_row bg_cyan">{0}</div>', childSnapshot.key));
+            var $petName = $(String.format('<div class="col-xs-3 col-sm-3 col-lg-3 edit_row bg_blue">{0}</div>', data.PetName));
+            var $state = $(String.format('<div class="col-xs-3 col-sm-3 col-lg-3 edit_row bg_cyan">{0}</div>', data.State));
+            var $command = $('<div class="col-xs-3 col-sm-3 col-lg-3 edit_row bg_blue"></div>');
 
-            var $remove = $('<input type="button" value="remove" />');
-            var $edit = $('<input type="button" value="edit" />');
-            var $view = $('<input type="button" value="view" />');
+            var $remove = $('<input type="button" class="btn btn-default" value="移除" />');
+            var $edit = $('<input type="button" class="btn btn-default" value="編輯" />');
+            var $view = $('<input type="button" class="btn btn-default" value="查看" />');
 
             $command.append($remove);
             $command.append($edit);
