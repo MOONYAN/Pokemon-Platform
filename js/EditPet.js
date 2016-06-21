@@ -92,17 +92,17 @@ function RetrieveData() {
         $('#_locationText').val(petData.Location);
 
         if(petData.Category == "Dog")
-          $('#dog').checked = true;
+          document.getElementById("dog").checked = true;
         else if(petData.Category == "Cat")
-          $('#cat').checked = true;
+          document.getElementById("cat").checked = true;
         else if(petData.Category == "Rat")
-          $('#rat').checked = true;
+          document.getElementById("rat").checked = true;
         else if(petData.Category == "Rabbit")
-          $('#rabbit').checked = true;
+          document.getElementById("rabbit").checked = true;
         else if(petData.Category == "Bird")
-          $('#bird').checked = true;
+          document.getElementById("bird").checked = true;
         else if(petData.Category == "Other")
-          $('#others').checked = true;
+          document.getElementById("others").checked = true;
 
         $('#_introductionText').val(petData.Introduction);
         $('#_imageURLText').val(petData.ImageURL);
