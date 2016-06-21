@@ -1,11 +1,9 @@
-﻿
-var database = firebase.database();
+﻿var database = firebase.database();
 var petId;
 var petData;
 var player;
 var user;
 $(Start);
-
 function Start() {
     petId = Request.parameter('petId');
     var x = sessionStorage["user"];
@@ -13,13 +11,12 @@ function Start() {
         user = JSON.parse(x);
         console.log(user);
         LoginSuccess();
-    } else {
-        LoginFail();
     }
     if (!petId) {
         $('#_petContent').addClass('hide');
         console.log('none petId');
-    } else {
+    }
+    else {
         $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
         $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
         console.log(petId);
@@ -29,7 +26,7 @@ function Start() {
 
 function RetrieveData() {
     var petRef = database.ref('pets/' + petId);
-    petRef.once("value").then(function(snapshot) {
+    petRef.once("value").then(function (snapshot) {
         petData = snapshot.val();
         $('#_petNameText').text(petData.PetName);
         $('#_genderText').text(petData.Gender);
@@ -45,34 +42,25 @@ function RetrieveData() {
         $('#_youtubeURL').text("Click me watch the introduction video");
         $('#_cellPhoneURLText').val(petData.CellPhone);
 
-        $.when(player).done(function (x) {
-            x.cueVideoById(petData.YoutubeURL);
-        });
-
-        /*player = new YT.Player('player', {
-            height: '390',
-            width: '100%',
-            videoId: petData.YoutubeURL
-        });*/
+        if (player) {
+            player.cueVideoById(petData.YoutubeURL);
+        }
     });
 }
 
-function onYouTubeIframeAPIReady()
-{
+function onYouTubeIframeAPIReady() {
 
     player = new YT.Player('player', {
         height: '390',
         width: '100%',
         //videoId: petData.YoutubeURL
     });
+    if (petData) {
+        player.cueVideoById(petData.YoutubeURL);
+    }
 }
 
 function LoginSuccess() {
     $('#_photoURLImage').attr("src", user.photoURL);
     $('._loginAnchor a').text('登出');
-}
-
-function LoginFail() {
-    $('._user').addClass("hide");
-    $('#_photoURLImage').addClass("hide");
 }
