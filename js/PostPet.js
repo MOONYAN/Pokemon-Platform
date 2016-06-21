@@ -40,6 +40,7 @@ function CheckLoginState() {
         if (x) {
             user = JSON.parse(x);
             LoginSuccess();
+            $('#dog').checked = true;
         }
         else
         {
