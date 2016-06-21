@@ -97,7 +97,7 @@ function CheckAdmin()
     if (x) {
         user = JSON.parse(x);
         $('#_photoURLImage').attr("src", user.photoURL);
-        $('._loginAnchor a').text('Logout');
+        $('._loginAnchor a').text('登出');
         isAdmin = user.admin;
     } else {
         LoginFail();
