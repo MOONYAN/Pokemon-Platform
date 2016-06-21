@@ -35,7 +35,7 @@
 .master_vision {
   position: relative;
   background-image: url("../images/master-image-background.png"); }
-  .master_vision button {
+  .master_vision a {
     height: 40px;
     width: 100px;
     position: absolute;
