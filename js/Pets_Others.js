@@ -113,7 +113,7 @@ function RetrieveData()
     var end;
     var counter=0;
     reference.once("value").then(function (subSnapshot) {
-        subSnapshot.ref.orderByChild('Category').equalTo('Others').once("value").then(function (snapshot) {
+        subSnapshot.ref.orderByChild('Category').equalTo('Other').once("value").then(function (snapshot) {
 //            console.log(snapshot.numChildren()+'-----------------------');
             temp=snapshot.numChildren();
             CulculatePage();
