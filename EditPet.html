@@ -15,26 +15,26 @@
   <header class="container">
       <div class="row">
           <a class="hamburger-menu pull-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <h4><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></h4>
+              <h4>
+                  <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+              </h4>
           </a>
           <div class="login_status">
-              <img id="_photoURLImage" src="images/cat-pets-cute-nearby-allatportre.jpg" alt="" />
+              <img id="_photoURLImage" src="images/cat-pets-cute-nearby-allatportre.jpg" alt=""/>
           </div>
-          <a href="index.html">
-              <img class="logo col-lg-2 col-lg-offset-0" src="images/logo_petfinder.png" alt="" />
-          </a>
+          <a href="index.html"><img class="logo col-lg-2 col-lg-offset-0" src="images/logo_petfinder.png" alt=""/></a>
           <ul class="nav navbar-nav navbar-right">
               <li>
-                  <a href="about_us.html">About us</a>
+                  <a href="about_us.html">關於我們</a>
               </li>
               <li>
-                  <a href="Pets_Dog.html">Pets</a>
+                  <a href="Pets_Dog.html">寵物平台</a>
               </li>
               <li class="_loginAnchor">
-                  <a href="LoginPage.html">Login</a>
+                  <a href="LoginPage.html">登入</a>
               </li>
-              <li>
-                  <a href="user.html">Myself</a>
+              <li class="_user">
+                  <a href="user.html">使用者</a>
               </li>
           </ul>
       </div>
@@ -44,16 +44,16 @@
           <div id="collapseOne" class="collapse">
               <ul class="nav">
                   <li>
-                      <a href="about_us.html">About us</a>
+                      <a href="about_us.html">關於我們</a>
                   </li>
                   <li>
-                      <a href="Pets_Dog.html">Pets</a>
+                      <a href="Pets_Dog.html">寵物平台</a>
                   </li>
                   <li class="_loginAnchor">
-                      <a href="LoginPage.html">Login</a>
+                      <a href="LoginPage.html">登入</a>
                   </li>
-                  <li>
-                      <a href="user.html">Myself</a>
+                  <li class="_user">
+                      <a href="user.html">使用者</a>
                   </li>
               </ul>
           </div>
@@ -65,7 +65,7 @@
           <div class="col-xs-12 col-sm-12 col-lg-12 ">
             <div class="row">
               <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                <h3>編輯寵物</h3>
+                <h2 class="margin-right--10">編輯寵物</h2>
               </div>
             </div>
             <div class="gray_line">
@@ -81,7 +81,7 @@
                 <br />-->
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>寵物名稱</label>
+                  <label class="margin-right--10">寵物名稱</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <input id="_petNameText" type="text" />
@@ -89,7 +89,7 @@
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>性別</label>
+                  <label class="margin-right--10">性別</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <input id="_genderText" type="text" />
@@ -97,7 +97,7 @@
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>生日</label>
+                  <label class="margin-right--10">生日</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <input id="_birthdayText" type="text" />
@@ -105,7 +105,7 @@
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>地點</label>
+                  <label class="margin-right--10">地點</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <input id="_locationText" type="text" />
@@ -113,15 +113,28 @@
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>分類</label>
+                  <label class="margin-right--10">分類</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
-                  <input id="_categoryText" type="text" />
+                  <input id="dog" name="category" type="radio" value="Dog"/><label class="radioLabel" for="dog">狗</label>
+                  <br>
+                  <input id="cat" name="category" type="radio" value="Cat"/><label class="radioLabel" for="cat">貓</label>
+                  <br>
+                  <input id="rat" name="category" type="radio" value="Rat"/><label class="radioLabel" for="rat">老鼠</label>
+                  <br>
+                  <input id="rabbit" name="category" type="radio" value="Rabbit"/><label class="radioLabel" for="rabbit">兔子</label>
+                  <br>
+                  <input id="bird" name="category" type="radio" value="Bird"/><label class="radioLabel" for="bird">鳥</label>
+                  <br>
+                  <input id="others" name="category" type="radio" value="Other" /><label class="radioLabel" for="others">其他</label>
                 </div>
+                <!-- <div class="col-xs-12 col-sm-9 col-lg-9">
+                  <input id="_categoryText" type="text" />
+                </div> -->
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>介紹</label>
+                  <label class="margin-right--10">介紹</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <textarea id="_introductionText"  rows="5"></textarea>
@@ -130,7 +143,7 @@
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>照片URL</label>
+                  <label class="margin-right--10">照片URL</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <input id="_imageURLText" type="text" />
@@ -138,7 +151,7 @@
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>YoutubeURL</label>
+                  <label class="margin-right--10">YoutubeURL</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <input id="_youtubeURLText" type="text" />
@@ -146,7 +159,7 @@
               </div>
               <div class="row margin-top-10">
                 <div class="col-xs-12 col-sm-3 col-lg-3 text_right">
-                  <label>連絡電話</label>
+                  <label class="margin-right--10">連絡電話</label>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
                   <input id="_cellPhoneURLText" type="text" />
@@ -156,12 +169,9 @@
                 <div class="col-xs-0 col-sm-3 col-lg-3 text_right">
                 </div>
                 <div class="col-xs-12 col-sm-9 col-lg-9">
-                  <label>
-                      Active
-                      <input id="_activeRadio" name="state" type="radio" value="active" checked="checked" />
-                      Done
-                      <input id="_doneRadio" name="state" type="radio" value="done" />
-                  </label>
+                  <input id="_activeRadio" name="state" type="radio" value="active" checked="checked" /><label class="radioLabel2" for="_activeRadio">Active</label>
+                  <input id="_doneRadio" name="state" type="radio" value="done" /><label class="radioLabel2" for="_doneRadio">Done</label>
+
                 </div>
               </div>
               <div class="row margin-top-10">

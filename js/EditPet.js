@@ -17,13 +17,14 @@ $(CheckLoginState);
 
 $('#_updateButton').click(function () {
   console.log("click");
+
     var adjustPet =
         {
             PetName: $('#_petNameText').val(),
             Gender: $('#_genderText').val(),
             Birthday: $('#_birthdayText').val(),
             Location: $('#_locationText').val(),
-            Category: $('#_categoryText').val(),
+            Category: $('input[name="category"]:checked').val(),
             Introduction: $('#_introductionText').val(),
             ImageURL: $('#_imageURLText').val(),
             YoutubeURL: $('#_youtubeURLText').val().replace("https://www.youtube.com/watch?v=", ""),
@@ -54,6 +55,7 @@ function CheckLoginState() {
             $('#_petContent').addClass('hide');
             console.log('add');
             LoginFail();
+            $('#dog').checked = true;
         }
     });
 }
@@ -70,7 +72,8 @@ function LoginSuccess() {
 
     //$('#_uidLabel').text(user.uid);
     //$('#_loginButton').addClass('hide');
-    $('._loginAnchor').addClass('hidden');
+    // $('._loginAnchor').addClass('hidden');
+    $('._loginAnchor a').text('登出');
     //$('#_hidden').val(user.providerId);
     $('#_petContent').removeClass('hide');
 }
@@ -88,7 +91,20 @@ function RetrieveData() {
         $('#_genderText').val(petData.Gender);
         $('#_birthdayText').val(petData.Birthday);
         $('#_locationText').val(petData.Location);
-        $('#_categoryText').val(petData.Category);
+
+        if(petData.Category == "Dog")
+          document.getElementById("dog").checked = true;
+        else if(petData.Category == "Cat")
+          document.getElementById("cat").checked = true;
+        else if(petData.Category == "Rat")
+          document.getElementById("rat").checked = true;
+        else if(petData.Category == "Rabbit")
+          document.getElementById("rabbit").checked = true;
+        else if(petData.Category == "Bird")
+          document.getElementById("bird").checked = true;
+        else if(petData.Category == "Other")
+          document.getElementById("others").checked = true;
+
         $('#_introductionText').val(petData.Introduction);
         $('#_imageURLText').val(petData.ImageURL);
         //$('#_imageURLImage').attr("src", petData.ImageURL);

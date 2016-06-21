@@ -19,7 +19,7 @@ $('#_postButton').click(function () {
             Gender: $('#_genderText').val(),
             Birthday: $('#_birthdayText').val(),
             Location: $('#_locationText').val(),
-            Category: $('#_categoryText').val(),
+            Category: $('input[name="category"]:checked').val(),
             Introduction: $('#_introductionText').val(),
             ImageURL: $('#_imageURLText').val(),
             YoutubeURL: $('#_youtubeURLText').val().replace("https://www.youtube.com/watch?v=", ""),
@@ -40,6 +40,7 @@ function CheckLoginState() {
         if (x) {
             user = JSON.parse(x);
             LoginSuccess();
+            $('#dog').checked = true;
         }
         else
         {
@@ -91,12 +92,13 @@ function LoginSuccess() {
     //localStorage.setItem('user', user);
     //localStorage.setItem("loginState", "login");
     //sessionStorage["loginState"] = "login";
-    $('#_displayNameLabel').text(user.displayName);
-    $('#_emailLabel').text(user.email);
-    //$('#_photoURLLabel').text(user.photoURL);
-    $('#_photoURLImage').attr("src", user.photoURL);
-    $('#_uidLabel').text(user.uid);
-    $('#_loginButton').addClass('hide');
+    // $('#_displayNameLabel').text(user.displayName);
+    // $('#_emailLabel').text(user.email);
+    // //$('#_photoURLLabel').text(user.photoURL);
+    // $('#_photoURLImage').attr("src", user.photoURL);
+    // $('#_uidLabel').text(user.uid);
+    // $('#_loginButton').addClass('hide');
+    $('._loginAnchor a').text('登出');
     $('#_petContent').removeClass('hide');
     //$('#_hidden').val(user.providerId);
 }
