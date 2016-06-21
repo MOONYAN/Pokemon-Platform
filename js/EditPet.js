@@ -89,7 +89,20 @@ function RetrieveData() {
         $('#_genderText').val(petData.Gender);
         $('#_birthdayText').val(petData.Birthday);
         $('#_locationText').val(petData.Location);
-        $('#_categoryText').val(petData.Category);
+
+        if(petData.Category == "Dog")
+          $('#dog').checked = true;
+        else if(petData.Category == "Cat")
+          $('#cat').checked = true;
+        else if(petData.Category == "Rat")
+          $('#rat').checked = true;
+        else if(petData.Category == "Rabbit")
+          $('#rabbit').checked = true;
+        else if(petData.Category == "Bird")
+          $('#bird').checked = true;
+        else if(petData.Category == "Other")
+          $('#others').checked = true;
+
         $('#_introductionText').val(petData.Introduction);
         $('#_imageURLText').val(petData.ImageURL);
         //$('#_imageURLImage').attr("src", petData.ImageURL);
