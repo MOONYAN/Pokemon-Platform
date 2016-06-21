@@ -98,6 +98,7 @@ function LoginSuccess() {
     // $('#_photoURLImage').attr("src", user.photoURL);
     // $('#_uidLabel').text(user.uid);
     // $('#_loginButton').addClass('hide');
+    $('._loginAnchor a').text('登出');
     $('#_petContent').removeClass('hide');
     //$('#_hidden').val(user.providerId);
 }
