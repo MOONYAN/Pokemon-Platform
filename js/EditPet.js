@@ -55,6 +55,7 @@ function CheckLoginState() {
             $('#_petContent').addClass('hide');
             console.log('add');
             LoginFail();
+            $('#dog').checked = true;
         }
     });
 }
