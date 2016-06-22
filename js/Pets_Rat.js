@@ -35,7 +35,6 @@ $( document ).ready( function() {
     var temp;
     if (e.which == 13) {
         temp=$("#_pg").val();
-        alert(temp);
         if(temp>=1 && temp<=pageTotal && temp!=pageNow){
           pageNow=temp;
           $petsContainer.empty();

@@ -35,7 +35,6 @@ $( document ).ready( function() {
     var temp;
     if (e.which == 13) {
         temp=$("#_pg").val();
-        alert(temp);
         if(temp>=1 && temp<=pageTotal && temp!=pageNow){
           pageNow=temp;
           $petsContainer.empty();
@@ -55,14 +54,6 @@ $(window).resize(function() {
 function CheckPictureHeight()
 {
     $('.petPicture').css({height:$('.petPicture').width()});
-    var screenWidth = screen.width;
-    console.log(screenWidth);
-    if (screenWidth<768) {
-      $('.petContext').css('min-height',$('.petPicture').height());
-    }
-    else {
-      $('.petContext').css('min-height','0px');
-    }
 }
 
 var database = firebase.database();
@@ -123,12 +114,12 @@ function RetrieveData()
                 if(counter>=start && counter<=end){
                     var data = childSnapshot.val();
                     var $petData = $('<div class="col-lg-4 col-sm-4 col-xs-12 pet"></div>');
-                    var $imageURL = $(String.format('<div class="col-lg-12 col-sm-12 col-xs-3 petPicture" style="background-image: url({0});"></div>' , data.ImageURL));
-                    var $petFrame = $('<div class="col-lg-12 col-sm-12 col-xs-9 petContext"></div>');
-                    var $petId = $(String.format('<div class="number">寵物ID:{0}</div>', childSnapshot.key));
-                    var $petName = $(String.format('<div class="number">寵物名字:{0}</div>', data.PetName));
-                    var $birthday = $(String.format('<div class="number">生日:{0}</div>', data.Birthday));
-                    var $location = $(String.format('<div class="number">地址:{0}</div>', data.Location));
+                    var $imageURL = $(String.format('<div class="col-lg-12 col-sm-12 col-xs-12 petPicture" style="background-image: url({0});"></div>' , data.ImageURL));
+                    var $petFrame = $('<div class="col-lg-12 col-sm-12 col-xs-12 petContext list-group"></div>');
+                    var $petId = $(String.format('<div class="number list-group-item">寵物ID:{0}</div>', childSnapshot.key));
+                    var $petName = $(String.format('<div class="number list-group-item">寵物名字:{0}</div>', data.PetName));
+                    var $birthday = $(String.format('<div class="number list-group-item">生日:{0}</div>', data.Birthday));
+                    var $location = $(String.format('<div class="number list-group-item">地址:{0}</div>', data.Location));
 //                var $category = $(String.format('<div class="number">Category:{0}</div>', data.Category));
 //                var $view = $('<input type="button" value="view" />');
                     var $remove = $('<span class="glyphicon glyphicon-remove-circle but"></span>');
