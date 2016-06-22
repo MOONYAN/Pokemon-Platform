@@ -99,6 +99,8 @@ function CheckAdmin()
         $('#_photoURLImage').attr("src", user.photoURL);
         $('._loginAnchor a').text('登出');
         isAdmin = user.admin;
+    } else {
+        LoginFail();
     }
     console.log(isAdmin);
 }
@@ -168,4 +170,10 @@ function RetrieveData()
             CheckPictureHeight();
         });
     });
+}
+
+
+function LoginFail() {
+    $('._user').addClass("hide");
+    $('#_photoURLImage').addClass("hide");
 }
