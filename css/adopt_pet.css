@@ -12,7 +12,6 @@
 .main {
   border-style: solid;
   border-width: 3px;
-  background-color: #43e2fe;
   height: 100%; }
 
 .tabTable {
@@ -65,21 +64,27 @@
   border-style: solid;
   border-width: 3px;
   font-size: 1vw;
-  background-color: #38c7d8; }
+  padding: 0px; }
+
+.number {
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .petBut {
   border-style: solid;
   border-width: 3px;
-  border-top: none;
-  background-color: #38c7d8; }
+  border-top: none; }
 
 .but {
   position: absolute;
-  background-color: red;
   top: 0;
   left: 4%;
   font-size: 5vw;
   padding: 5px; }
+
+.but:hover {
+  cursor: pointer;
+  color: red; }
 
 .left {
   margin-bottom: 15px;
