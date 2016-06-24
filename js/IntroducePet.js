@@ -19,8 +19,8 @@ function Start() {
         console.log('none petId');
     }
     else {
-        $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
-        $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/IntroducePet.html?petId=" + petId);
+        $('.fb-like').data('href', "https://owen-pokemon.herokuapp.com/?petId=" + petId);
+        $('.fb-comments').data('href', "https://owen-pokemon.herokuapp.com/?petId=" + petId);
         console.log(petId);
         RetrieveData();
     }
